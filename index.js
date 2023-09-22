@@ -1,6 +1,7 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
 let range = 3
+let choice;
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -41,7 +42,19 @@ function triggerNavbar(x) {
 
 // Function to handle the scroll event
 
-	
+Array.from(navbar.children).forEach((child) => {
+	if (!child.classList.contains("ignored")){
+		child.addEventListener("click", (_event) => {
+			if (choice && choice.style.borderRight.startsWith("3px")){
+				choice.style.borderRight = ""
+				choice.style.backgroundColor = ""
+			}
+			choice = child
+			choice.style.borderRight = "3px solid rgb(188, 172, 216)"
+			choice.style.backgroundColor = "rgba(124, 112, 143, 0.30)"
+		})
+	}
+})
   
 // Attach the handleScroll function to the window's scroll event
 window.addEventListener('scroll', () => {

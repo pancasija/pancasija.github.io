@@ -72,7 +72,9 @@ nav {
     transition: right 500ms;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 1em;
+    border-left: 2px solid rgb(169, 168, 168);
 }
 
 #welcome {
@@ -98,12 +100,24 @@ nav {
     position: absolute;
     top: 0px;
     transition: top 400ms, opacity 200ms;
+    width: 100%;
+    margin: -0.8em;
+    text-align: center;
+    opacity: 0.2;
 }
 
 .nav-item:hover {
     color: rgb(188, 172, 216);
-    text-decoration: underline solid rgb(188, 172, 216);
 } 
+
+.nav-item::after {
+    border-top: 2px solid white;
+    width: 75%;
+    display: block;
+    content: "";
+    margin-top: 0.3em;
+    margin-left: 0.8em;
+}
 
 header {
     opacity: 0;
