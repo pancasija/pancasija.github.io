@@ -1,7 +1,27 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
-const aboutUs = document.getElementById("about-us")
+const bazaar = document.getElementById("bazaar")
+// const informationBox = document.getElementById("information-box")
+// const nextButton = document.getElementById("next")
+// const previousButton = document.getElementById("previous")
+// const informationHeader = document.getElementById("information-header")
+// const informationDescription = document.getElementById("information-description")
+const pages = {
+	1: {
+		title: "Bazaar",
+		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
+	},
+	2: {
+		title: "Pertunjukan Seni",
+		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
+	},
+	3: {
+		title: "Fashion Shows",
+		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
+	}
+}
 let range = 3
+let pageChoice = 1
 let choice;
 
 function isElementInViewport(element) {
@@ -67,14 +87,46 @@ window.addEventListener('scroll', () => {
 		header.style.transform = "translateY(15px)"
 	}
 
-	if (isElementInViewport(aboutUs)) {
-		aboutUs.style.opacity = 1;
-		aboutUs.style.transform = "translateY(-15px)"
+	if (isElementInViewport(bazaar)) {
+		bazaar.style.opacity = 1;
+		bazaar.style.transform = "translateY(-15px)"
 	} else {
-		aboutUs.style.opacity = 0;
-		aboutUs.style.transform = "translateY(15px)"
+		bazaar.style.opacity = 0;
+		bazaar.style.transform = "translateY(15px)"
 	}
 });
+
+// nextButton.addEventListener("click", (event) => {
+// 	if (pageChoice == 3){pageChoice = 1}
+// 	else {pageChoice++}
+// 	let pageInformation = pages[pageChoice]
+
+// 	informationHeader.style.opacity = 0
+// 	informationDescription.style.opacity = 0
+
+// 	setTimeout(() => {
+// 		informationHeader.style.opacity = 1
+// 		informationDescription.style.opacity = 1
+// 		informationHeader.innerText = pageInformation.title
+// 		informationDescription.innerText = pageInformation.description
+// 	}, 200)	
+// })
+
+// previousButton.addEventListener("click", (event) => {
+// 	if (pageChoice == 1){pageChoice = 3}
+// 	else {pageChoice -= 1}
+// 	let pageInformation = pages[pageChoice]
+
+// 	informationHeader.style.opacity = 0
+// 	informationDescription.style.opacity = 0
+
+// 	setTimeout(() => {
+// 		informationHeader.style.opacity = 1
+// 		informationDescription.style.opacity = 1
+// 		informationHeader.innerText = pageInformation.title
+// 		informationDescription.innerText = pageInformation.description
+// 	}, 200)
+// })
 
 setTimeout(_ => {
 	header.style.opacity = 1;
