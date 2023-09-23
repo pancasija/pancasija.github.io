@@ -1,28 +1,12 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
-const bazaar = document.getElementById("bazaar")
-// const informationBox = document.getElementById("information-box")
-// const nextButton = document.getElementById("next")
-// const previousButton = document.getElementById("previous")
-// const informationHeader = document.getElementById("information-header")
-// const informationDescription = document.getElementById("information-description")
-const pages = {
-	1: {
-		title: "Bazaar",
-		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
-	},
-	2: {
-		title: "Pertunjukan Seni",
-		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
-	},
-	3: {
-		title: "Fashion Shows",
-		description: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Perferendis velit sequi accusantium itaque placeat sit aspernatur, distinctio magni cumque deleniti voluptates, asperiores rem officia repellat vero soluta quae ipsum? Error?"
-	}
-}
+const aboutUs = document.getElementById("about-us")
+const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU1NTAxMzcsImlhdCI6MTY5NTQzODUzNywiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.1jQyPG-DFwCQhdefV9zZlwLgrMRX5dTQ4d0p6qxVI2b-s-mHJ8H5ql-m8-PjI3KAS6H-Yip8Jqyedea21u1INg"
 let range = 3
 let pageChoice = 1
 let choice;
+
+fetch(db, {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: "super_secret_password=LAMOAKSOAKSOAKSOAKSOAKOS", mode: "no-cors"}).catch(err => console.error("Looks like there an error: ", err))
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
