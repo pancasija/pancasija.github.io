@@ -1,8 +1,11 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
 const aboutUs = document.getElementById("about-us")
+const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU1NTAxMzcsImlhdCI6MTY5NTQzODUzNywiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.1jQyPG-DFwCQhdefV9zZlwLgrMRX5dTQ4d0p6qxVI2b-s-mHJ8H5ql-m8-PjI3KAS6H-Yip8Jqyedea21u1INg"
 let range = 3
 let choice;
+
+fetch(db, {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: "super_secret_password=LAMOAKSOAKSOAKSOAKSOAKOS", mode: "no-cors"}).catch(err => console.error("Looks like there an error: ", err))
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
