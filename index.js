@@ -1,12 +1,23 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
-const aboutUs = document.getElementById("about-us")
-const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU1NTAxMzcsImlhdCI6MTY5NTQzODUzNywiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.1jQyPG-DFwCQhdefV9zZlwLgrMRX5dTQ4d0p6qxVI2b-s-mHJ8H5ql-m8-PjI3KAS6H-Yip8Jqyedea21u1INg"
-let range = 3
-let pageChoice = 1
-let choice;
+const aboutUs = document.getElementById("about-us-card")
+const questions = document.getElementById("questions")
+const wordToMove = document.getElementById("kami")
+const metadata = document.getElementById("metadata")
+const aboutUsPage = { //Make the value string rather than making a new object :)
+	"what": "Pancasija merupakan website yang dikhususkan untuk proyek P5 sekolah kami. Tujuan dari website ini untuk memberi informasi kepada pembaca tentang proyek kami.",
 
-fetch(db, {method: "POST", headers: {"Content-Type": "application/x-www-form-urlencoded"}, body: "super_secret_password=LAMOAKSOAKSOAKSOAKSOAKOS", mode: "no-cors"}).catch(err => console.error("Looks like there an error: ", err))
+	"who": "Kami dari SMKN 1 Jakarta jurusan SIJA ingin menyampaikan kepada kalian hasil kerja keras kami untuk proyek P5. Tim kami terus bekerja keras untuk memaximalkan hasil project! Pada akhirnya P5 memiliki 3 acara yaitu <a class='link' href='#'>fashion shows</a>, <a class='link' href='#'>kesenian</a>, <a class='link' href='#'>bazaar makanan</a>. Kami akan menampilkan acara berikut dengan tema dari provinsi NTT",
+
+	"when": "Acara - acara tersebut dilenggarakan pada waktu puncak projek P5 yaitu pada tanggal <time datetime='10-5'>5 Oktober</time>. Jangan lupa mampir ya karena bakal ada kupon loh kalau selesain quiz di website ini",
+
+	"where": "Acara kami akan diselenggarakan di halaman sekolah SMKN 1 Jakarta. Kami akan buka stand khusus. Bisa dicari di lapangan nanti. Kami akan tunggu kedatangan kalian!"
+}
+
+let range = 3
+let page = "who"
+let choice;
+let transsitionWord = false;
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -61,6 +72,39 @@ Array.from(navbar.children).forEach((child) => {
 	}
 })
   
+
+Array.from(questions.children).forEach((child) => {
+	child.addEventListener("click", (event) => {
+		if (event.target.id == page){
+			return;
+		}
+
+		page = event.target.id
+		if (page == "what"){
+			metadata.style.left = "2.5em"
+			metadata.innerText = "Adalah"
+			wordToMove.style.left = "0px"
+		} else if (page == "who"){
+			metadata.style.left = "0px"
+			metadata.innerText = "Tentang"
+			wordToMove.style.left = "3.5em"
+		} else if (page == "when"){
+			metadata.style.left = "0px"
+			metadata.innerText = "Kapan Acara"
+			wordToMove.style.left = "5.5em"
+		} else if (page == "where"){
+			metadata.style.left = "0px"
+			metadata.innerText = "Dimana Acara"
+			wordToMove.style.left = "6.1em"
+		}
+		let aboutUsDescription = aboutUs.children[1];
+		aboutUsDescription.style.opacity = 0
+		setTimeout(() => {
+			aboutUsDescription.innerHTML = aboutUsPage[page];
+			aboutUsDescription.style.opacity = 1
+		}, 300);
+	})
+})
 // Attach the handleScroll function to the window's scroll event
 window.addEventListener('scroll', () => {
 	if (isElementInViewport(header)) {
@@ -70,47 +114,7 @@ window.addEventListener('scroll', () => {
 		header.style.opacity = 0;
 		header.style.transform = "translateY(15px)"
 	}
-
-	if (isElementInViewport(bazaar)) {
-		bazaar.style.opacity = 1;
-		bazaar.style.transform = "translateY(-15px)"
-	} else {
-		bazaar.style.opacity = 0;
-		bazaar.style.transform = "translateY(15px)"
-	}
 });
-
-// nextButton.addEventListener("click", (event) => {
-// 	if (pageChoice == 3){pageChoice = 1}
-// 	else {pageChoice++}
-// 	let pageInformation = pages[pageChoice]
-
-// 	informationHeader.style.opacity = 0
-// 	informationDescription.style.opacity = 0
-
-// 	setTimeout(() => {
-// 		informationHeader.style.opacity = 1
-// 		informationDescription.style.opacity = 1
-// 		informationHeader.innerText = pageInformation.title
-// 		informationDescription.innerText = pageInformation.description
-// 	}, 200)	
-// })
-
-// previousButton.addEventListener("click", (event) => {
-// 	if (pageChoice == 1){pageChoice = 3}
-// 	else {pageChoice -= 1}
-// 	let pageInformation = pages[pageChoice]
-
-// 	informationHeader.style.opacity = 0
-// 	informationDescription.style.opacity = 0
-
-// 	setTimeout(() => {
-// 		informationHeader.style.opacity = 1
-// 		informationDescription.style.opacity = 1
-// 		informationHeader.innerText = pageInformation.title
-// 		informationDescription.innerText = pageInformation.description
-// 	}, 200)
-// })
 
 setTimeout(_ => {
 	header.style.opacity = 1;
