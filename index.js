@@ -30,6 +30,14 @@ let page = "who"
 let imageChoice = "salome"
 let choice;
 
+window.addEventListener("click", (event) => {
+	if (event.target.classList.contains("hamburger")){return;}
+	let navBar = document.getElementById("hamburger-container")
+	if (navBar.classList.contains("signal")){
+		triggerNavbar(navBar)
+	}
+})
+
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
 	return (
@@ -65,6 +73,9 @@ function triggerNavbar(x) {
 		range = 3
 	}
 	x.classList.toggle("change");
+	setTimeout(() => {
+		x.classList.toggle("signal")
+	}, 100)
 }
 
 // Function to handle the scroll event
@@ -89,6 +100,9 @@ Array.from(questions.children).forEach((child) => {
 		if (event.target.id == page){
 			return;
 		}
+
+		document.getElementById(page).classList.toggle("click")
+		event.target.classList.toggle("click")
 
 		page = event.target.id
 		if (page == "what"){
@@ -125,6 +139,7 @@ Array.from(foodContainer.children).forEach(child => {
 
 		document.getElementById(imageChoice).classList.toggle("click")
 		event.target.classList.toggle("click")
+		
 		imageChoice = event.target.id
 		foodInformationContainer.style.opacity = 0
 		setTimeout(() => {

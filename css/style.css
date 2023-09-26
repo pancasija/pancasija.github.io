@@ -44,9 +44,15 @@ nav {
     text-shadow: 0px 0px 20px var(--blurple), -2px -2px 0 white, 2px  2px 0 black
 }
 
+.hover-item:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px rgb(145, 113, 113);
+}
+
 .link {
     color: var(--blurple);
     text-decoration: none;
+    text-transform: capitalize;
 }
 
 .link:hover {
@@ -208,7 +214,7 @@ section {
     width: 98.7vw;
     height: 30%;
     position: absolute;
-    top: 11.5em;
+    top: 12.2em;
     left: 0px;
     content: "";
 }
@@ -280,15 +286,6 @@ section {
 }
 /* rgb(248, 96, 96) */  
 
-.question:hover {
-    cursor: pointer;
-    color: rgb(65, 78, 159);
-    transform: scale(1.1);
-    box-shadow: 0px 0px 20px var(--blurple);
-    text-shadow: 1px 1px black;
-    border-color: white;
-}
-
 #bazaar-container{
     background-color: black;
     height: fit-content;
@@ -297,22 +294,19 @@ section {
 #bazaar-information > h1 {
     font-size: 1.9em;
 }
+#bazaar-information > p{
+    font-size: 0.5em;
+    max-width: 60ch;
+    text-align: justify;
+}
 
 #menu {
     display: flex;
     justify-content: flex-start;
-    border: 2px solid snow;
-    background-color: rgba(65, 78, 159, 0.389);
     border-radius: 10px;
     position: relative;
     padding: 0.5em;
        
-}
-
-#bazaar-description {
-    font-size: 0.5em;
-    max-width: 45ch;
-    margin: 0 auto;
 }
 
 #food-section {
@@ -346,13 +340,18 @@ section {
     border: 3px solid white;
 }
 
+.click:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 20px var(--blurple);
+}
+
 
 #susu-goreng {
     background-image: url("../imgs/susu-goreng.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;
-    height: 2em;
+    height: 2.5em;
 }
 
 #salome {
@@ -360,7 +359,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;
-    height: 2em;
+    height: 2.5em;
 }
 
 #lawar-ayam {
@@ -368,8 +367,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;
-    height: 2em;
-    background-position: 0 -29px;
+    height: 2.5em;
 }
 
 #catemak-jagung {
@@ -377,7 +375,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;
-    height: 2em;
+    height: 2.5em;
 }
 
 #sambal-luat {
@@ -385,8 +383,7 @@ section {
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;
-    height: 2em;
-    background-position: 0 -15px;
+    height: 2.5em;
 }
 
 #information {
@@ -395,13 +392,13 @@ section {
     transition: opacity 200ms;
 }
 
+#information > h1{
+    font-size: 1.3em;
+    text-transform: capitalize;
+} 
+
 #information > p {
     font-size: 0.4em;
     text-align: justify;
     max-width: 60ch;
 }
-
-#information > h1{
-    font-size: 1.3em;
-    text-transform: capitalize;
-} 
