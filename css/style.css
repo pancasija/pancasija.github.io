@@ -323,15 +323,7 @@ section {
 .food {
     width: fit-content;
     border-radius: 10px;
-    transition: transform 200ms, box-shadow 100ms, border 200ms;
-}
-
-.foodimg {
-    border-radius: 10px;
-}
-
-.food:hover {
-    cursor: pointer;
+    transition: transform 200ms, box-shadow 300ms, border 200ms;
 }
 
 .click {
@@ -408,7 +400,7 @@ section {
 #information > p {
     font-size: 0.4em;
     text-align: justify;
-    max-width: 60ch;
+    max-width: 50ch;
 }
 
 .check {
