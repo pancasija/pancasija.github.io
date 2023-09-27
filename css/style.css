@@ -136,7 +136,7 @@ nav {
     background-color: var(--dark);
     position: fixed;
     top: 0px;
-    right: 4em;
+    right: -4em;
     height: 100vh;
     width: 4em;
     transition: right 500ms;
