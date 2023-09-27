@@ -1,11 +1,13 @@
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
+const navitems = document.getElementById("navitems")
 const aboutUs = document.getElementById("about-us-card")
 const questions = document.getElementById("questions")
 const wordToMove = document.getElementById("kami")
 const metadata = document.getElementById("metadata")
 const foodContainer = document.getElementById("food-section")
 const foodInformationContainer = document.getElementById("information")
+const pentasInformationContainer = document.getElementById("pentas-information-container")
 const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU3MjUyMDgsImlhdCI6MTY5NTYxMzYwOCwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.48oLqvUO7IsJT2RvZ6VHOCxfAR0Cylcus4N_P-Vz7Mp7EpC0hKBchK9pAuHna8nD6DisbUUqIYBXKPFR-S6mGw"
 const aboutUsPage = { 
 	"what": "Pancasija merupakan website yang dikhususkan untuk proyek P5 jurusan kami. Tujuan dari website ini untuk memberi informasi kepada pembaca tentang proyek kami.",
@@ -51,7 +53,7 @@ function isElementInViewport(element) {
 
 function triggerNavbar(x) {
 	if (x.classList.contains("change")){
-		for (let child of navbar.children){
+		for (let child of navitems.children){
 			if (!child.classList.contains("ignored")){
 				range -= 3;
 				child.style.top = "0em"
@@ -63,7 +65,7 @@ function triggerNavbar(x) {
 	else {
 		navbar.style.right = "0em";
 		setTimeout(() => {
-			for (let child of navbar.children){
+			for (let child of navitems.children){
 				if (!child.classList.contains("ignored")){
 					child.style.opacity = 1
 					child.style.top = `${range}em`
@@ -80,14 +82,12 @@ function triggerNavbar(x) {
 
 Array.from(navbar.children).forEach((child) => {
 	if (!child.classList.contains("ignored") && child.id != "menu-header"){
-		child.addEventListener("click", (_event) => {
-			if (choice && choice.style.borderRight.startsWith("3px")){
-				choice.style.borderRight = ""
-				choice.style.backgroundColor = ""
+		child.addEventListener("click", (event) => {
+			if (choice){
+				choice.classList.toggle("nav-item-clicked")
 			}
-			choice = child
-			choice.style.borderRight = "3px solid rgb(188, 172, 216)"
-			choice.style.backgroundColor = "rgba(124, 112, 143, 0.30)"
+			choice = event.target
+			choice.classList.toggle("nav-item-clicked")
 		})
 	}
 })

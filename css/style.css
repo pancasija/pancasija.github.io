@@ -3,7 +3,8 @@
 
 :root {
     --blurple: rgb(101, 119, 230);
-    --dark: rgb(54, 57, 62);
+    --dark: rgb(40, 44, 52);
+    --darker: rgb(33, 37, 43);
     --grenish: rgba(0, 255, 180, 0.5);
     --test: rgb(116, 111, 182)
 }
@@ -44,9 +45,17 @@ nav {
     text-shadow: 0px 0px 20px var(--blurple), -2px -2px 0 white, 2px  2px 0 black
 }
 
+.box-white-neon {
+    box-shadow: 0px 0px 20px white
+}
+
+.box-blurpled-neon {
+    box-shadow: 0px 0px 20px var(--blurple), 0px 0px 20px white;
+}
+
 .hover-item:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 20px rgb(145, 113, 113);
+    box-shadow: 0px 0px 20px rgb(145, 113, 113)
 }
 
 .link {
@@ -87,29 +96,31 @@ nav {
     font-family: "Exo 2";
 }
 
-/* Rotate first bar */
-.change .bar1 {
-    transform: translate(0, 11px) rotate(-45deg);
-    background-color: rgb(248, 76, 76);
-  }
-  
-/* Fade out the second bar */
-.change .bar2 {
-    opacity: 0;
-}
-
-/* Rotate last bar */
-.change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
-    background-color: rgb(248, 76, 76);
-}
-
 .hamburger-container {
     position: fixed;
     top: 0px;
     right: 5px;
     cursor: pointer;
     z-index: 1;
+    transition: all 200ms;
+}
+
+.change .bar1 {
+    transform: translate(0, 11px) rotate(-45deg);
+    background-color: rgb(248, 76, 76);
+  }
+  
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+    background-color: rgb(248, 76, 76);
+}
+
+.change {
+    right: 4em;
 }
 
 .hamburger {
@@ -117,29 +128,38 @@ nav {
     height: 5px;
     background-color: rgb(72, 72, 199);
     margin: 6px 0;
-    transition: 0.4s;
+    transition: all 0.4s;
 }
 
 /* rgb(67, 66, 66)linear-gradient(to bottom right, rgb(129, 114, 178), rgb(237, 198, 198), rgb(188, 172, 216), rgb(204, 185, 219), rgb(237, 198, 198)) */
 #navbar {
-    background-color: rgb(54, 54, 110);
+    background-color: var(--dark);
     position: fixed;
     top: 0px;
-    right: -4em;
+    right: 4em;
     height: 100vh;
     width: 4em;
-    padding: 0.5em;
     transition: right 500ms;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 1em;
-    border-left: 2px solid rgb(169, 168, 168);
+    border-left: 1px solid rgb(58, 63, 76);
     overflow-x: hidden;
 }
 
-.menu-header {
-    font-size: 0.9em;
+.nav-item-clicked {
+    background-color: rgb(58, 63, 76);
+    border-radius:  15px
+}
+
+#menu-header {
+    font-size: 0.8em;
+    text-align: left;
+    border-bottom: 1px solid rgb(58, 63, 76);
+    padding: 0.2em;
+    background-color: var(--darker);
+    text-align: center;
 }
 
 .nav-item {
@@ -148,19 +168,20 @@ nav {
     text-decoration: none;
     position: absolute;
     top: 0px;
+    left: 0px;
     transition: top 400ms, opacity 200ms;
     width: 100%;
-    margin: -0.8em;
     text-align: center;
     opacity: 0.2;
+    color:  rgb(188, 172, 216);
 }
 
 .nav-item:hover {
-    color: rgb(188, 172, 216);
+    color: rgb(78, 107, 120);
 } 
-
+/* rgb(129, 146, 146) */
 .nav-item::after {
-    border-top: 2px solid white;
+    border-top: 2px solid rgb(129, 146, 146);
     width: 75%;
     display: block;
     content: "";
@@ -186,11 +207,12 @@ section {
     height: 100vh;
     padding: 3em;
 }
+
 .reveal-when-scroll {
     font-size: 0.6em;
     opacity: 0;
     transform: translateY(15px);
-    transition: transform 1s, opacity 1s;
+    transition: transform 500ms, opacity 500ms;
 }
 
 #welcome-description {
@@ -202,21 +224,23 @@ section {
 
 
 #welcome-page-container {
-    filter: brightness(0.4) blur(1.5px);
+    filter: brightness(0.4);
     background-image: url("../imgs/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
 
-#welcome-page-container::after {
+#shadow-transsition {
     display: block;
-    background: linear-gradient(0deg, rgba(1, 1, 3, 1) 7%, rgba(255, 255, 255, 0) 50%);
-    width: 98.7vw;
+    background: linear-gradient(to top, rgb(33, 37, 43, 1) 5%, rgb(33, 37, 43, 0) 100%);
+    width: 100%;
     height: 30%;
     position: absolute;
-    top: 12.2em;
     left: 0px;
+    bottom: 0px;
     content: "";
+    margin-top: 10px;
 }
 
 /* #about-us-container::after {
@@ -235,8 +259,8 @@ section {
     transition: opacity 300ms;
 }
 #about-us-container {
-    background-color: black;
-    height: 90vh
+    background-color: var(--darker);
+    height: 70vh
 }
 
 #about-us-card > h1 > span{
@@ -287,7 +311,7 @@ section {
 /* rgb(248, 96, 96) */  
 
 #bazaar-container{
-    background-color: black;
+    background-color: var(--darker);
     height: fit-content;
 }
 
@@ -405,4 +429,40 @@ section {
 
 .check {
     border: 3px solid red;
+}
+
+#pentas-container {
+    background-color: var(--darker);
+    height: 100vh;
+    position: relative
+}
+
+#pict-container {
+    top: 0em;
+    left: 2.2em;
+}
+
+#maumere {
+    border-radius: 10px;
+    border: 3px solid white;
+    margin: -1em
+}
+
+#pentas-container {
+    display: flex;
+}
+
+#pentas-information-container{
+    height: fit-content;
+    margin-top: -1.5em;
+}
+
+#pentas-information-container > p {
+    font-size: 0.4em;
+    text-align: justify;
+}
+
+#pentas-information-container > h2 {
+    font-size: 1em
+    
 }
