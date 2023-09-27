@@ -22,21 +22,22 @@ const foodDescription = {
 	"susu-goreng": "<a href='https://gacasshop.com/makanan-khas-rote-yang-unik-dan-lezat-untuk-dicoba/' class='link' target='_blank'>Susu Goreng</a> adalah salah satu hasil olahan susu tradisional masyarakat Rote Nusa Tenggara Timur (NTT), yang terbuat dari susu kerbau dengan campuran gula lontar melalui proses pemanasan.",
 	"lawar-ayam": "<a href='http://www.masakandapurku.com/2015/11/resep-membuat-ayam-lawar-khas-ntt.html' class='link' target='_blank'>Lawar Ayam</a> merupakan makanan khas Nusa Tenggara Timur yang biasa dijadikan lauk untuk menyantap nasi. Rasanya pedas, gurih dan nikmat serta menggugah selera makan Anda. Kalau Anda pergi ke NTT, jangan lupa mampir ke warung-warung yang menjualnya.",
 	"catemak-jagung": "<a href='https://www.nttmediaexpress.com/region-ntt/4249122460/catemak-jagung-kuliner-khas-ntt-makanan-penutup-yang-menarik-untuk-dicoba-resep-mudah-didapat#:~:text=LEMBATA%2C%20NTT%20EXPRESS.COM%20%2D,yang%20sangat%20menggugah%20selera%2C%20lho.' class='link' target='_blank'>Catemak Jagung</a> adalah makanan penutup yang berasal dari Nusa Tenggara Timur. Dessert satu ini berbahan utama kacang-kacangan yang disertai dengan bermacam sayuran. Walaupun makanan penutup, olahan ini memiliki rasa asin yang sangat menggugah selera",
-	"sambal-luat": "<a href='https://www.tribunnewswiki.com/2022/08/03/sambal-luat' class='link' target='_blank'>Sambal Luat</a> adalah hidangan pendamping khas dari Kupang, Nusa Tenggara Timur. Sambal luat adalah jenis sambal khas Kupang, Nusa Tenggara Timur (NTT). Sambal ini terbuat dari cabai rawit yang ditambahkan kemangi dan perasan jeruk nipis. Sambal luat selalu menjadi makanan pendamping bagi orang Nusa Tenggara Timur (NTT). Umumnya sambal ini dimakan bersama dengan sei sapi."
+	"sambal-luat": "<a href='https://www.tribunnewswiki.com/2022/08/03/sambal-luat' class='link' target='_blank'>Sambal Luat</a> adalah hidangan pendamping khas dari Kupang, Nusa Tenggara Timur. Sambal luat adalah jenis sambal khas Kupang, Nusa Tenggara Timur (NTT). Sambal ini terbuat dari cabai rawit yang ditambahkan kemangi dan perasan jeruk nipis. Sambal luat selalu menjadi makanan pendamping bagi orang Nusa Tenggara Timur (NTT). Umumnya sambal ini dimakan bersama dengan sei sapi.",
+	"es-sarang-burung": "<a href='https://www.tribunnewswiki.com/2021/12/31/es-sarang-burung' class='link'>Es Sarang Burung</a> yang terdiri dari agar-agar yang diserut sehingga sekilas mirip dengan sarang burung, akan dicampur dengan buah leci, sirup, biji selasih, es batu, dan air ini memang sangat menyegarkan dinikmati saat udara panas di siang hari."
+}
+const foodPrices = {
+	"salome": "<a href='https://www.detik.com/bali/nusra/d-6390608/mencicipi-kenyal-enaknya-salome-cilok-dari-dompu-yang-bikin-nagih#:~:text=Salome%20terbuat%20dari%20olahan%20daging,mencolok%20pada%20rasa%20dan%20varian.' class='link' target='_blank'>Salome</a> dibuat oleh Rasya dengan harga 5 ribu",
+	"susu-goreng": "<a href='https://gacasshop.com/makanan-khas-rote-yang-unik-dan-lezat-untuk-dicoba/' class='link' target='_blank'>Susu Goreng</a> dibuat oleh Rasya dengan harga  5 ribu",
+	"lawar-ayam": "<a href='http://www.masakandapurku.com/2015/11/resep-membuat-ayam-lawar-khas-ntt.html' class='link' target='_blank'>Lawar Ayam</a> kami dibuat oleh Navito dengan harga 50 ribu",
+	"sambal-luat": "<a href='https://www.tribunnewswiki.com/2022/08/03/sambal-luat' class='link' target='_blank'>Sambal Luat</a> kami dibuat oleh Rasya dengan harga 5 ribu",
+	"es-sarang-burung": "<a href='https://www.tribunnewswiki.com/2021/12/31/es-sarang-burung' class='link'>Es Sarang Burung</a> kami dibuat oleh Rafael dengan harga 5 ribu",
+	"catemak-jagung": "<a href='https://www.nttmediaexpress.com/region-ntt/4249122460/catemak-jagung-kuliner-khas-ntt-makanan-penutup-yang-menarik-untuk-dicoba-resep-mudah-didapat#:~:text=LEMBATA%2C%20NTT%20EXPRESS.COM%20%2D,yang%20sangat%20menggugah%20selera%2C%20lho.' class='link' target='_blank'>Catemak Jagung</a> kami dibuat oleh Rasya dengan harga 5 ribu",
 }
 
 let range = 3
 let page = "who"
 let imageChoice = "salome"
 let choice;
-
-window.addEventListener("click", (event) => {
-	if (event.target.classList.contains("hamburger")){return;}
-	let navBar = document.getElementById("hamburger-container")
-	if (navBar.classList.contains("signal")){
-		triggerNavbar(navBar)
-	}
-})
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -73,9 +74,6 @@ function triggerNavbar(x) {
 		range = 3
 	}
 	x.classList.toggle("change");
-	setTimeout(() => {
-		x.classList.toggle("signal")
-	}, 100)
 }
 
 // Function to handle the scroll event
@@ -145,12 +143,14 @@ Array.from(foodContainer.children).forEach(child => {
 		setTimeout(() => {
 			let informationHeader = foodInformationContainer.children[0]
 			let informationDescription = foodInformationContainer.children[1]
+			let informationPrice = foodInformationContainer.children[4]
 			if (imageChoice.includes("-")){
-				informationHeader.innerText = imageChoice.replace("-", " ") 
+				informationHeader.innerText = imageChoice.replace(/-/g, " ") 
 			} else {
 				informationHeader.innerText = imageChoice
 			}
 			informationDescription.innerHTML = foodDescription[imageChoice]
+			informationPrice.innerHTML = foodPrices[imageChoice]
 			foodInformationContainer.style.opacity = 1
 		}, 300);
 	})

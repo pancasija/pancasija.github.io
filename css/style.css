@@ -386,14 +386,22 @@ section {
     height: 2.5em;
 }
 
+#es-sarang-burung {
+    background-image: url("../imgs/es-sarang-burung.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 4em;
+    height: 2.5em;
+}
+
 #information {
     width: 100%;
     padding: 0.5em;
-    transition: opacity 200ms;
+    transition: opacity 130ms;
 }
 
-#information > h1{
-    font-size: 1.3em;
+#information > h2{
+    font-size: 1.2em;
     text-transform: capitalize;
 } 
 
@@ -401,4 +409,8 @@ section {
     font-size: 0.4em;
     text-align: justify;
     max-width: 60ch;
+}
+
+.check {
+    border: 3px solid red;
 }
