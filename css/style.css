@@ -5,8 +5,6 @@
     --blurple: rgb(101, 119, 230);
     --dark: rgb(40, 44, 52);
     --darker: rgb(33, 37, 43);
-    --grenish: rgba(0, 255, 180, 0.5);
-    --test: rgb(116, 111, 182)
 }
 
 * {
@@ -74,10 +72,6 @@ nav {
 
 .blurpled {
     color: var(--blurple)
-}
-
-.greenished {
-    color: rgba(0, 255, 180, 0.5)
 }
 
 .oranged-border {
@@ -440,9 +434,12 @@ section {
 #pict-container {
     top: 0em;
     left: 2.2em;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
 }
 
-#maumere {
+#pict-container > img {
     border-radius: 10px;
     border: 3px solid white;
     margin: -1em
@@ -464,5 +461,4 @@ section {
 
 #pentas-information-container > h2 {
     font-size: 1em
-    
 }
