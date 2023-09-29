@@ -8,7 +8,26 @@ const metadata = document.getElementById("metadata")
 const foodContainer = document.getElementById("food-section")
 const foodInformationContainer = document.getElementById("information")
 const pentasInformationContainer = document.getElementById("pentas-information-container")
+
+//Containers with section element (except progress-container & footer)
+const welcomePageContainer  = document.getElementById("welcome-page-container")
+const aboutUsContainer = document.getElementById("about-us-container")
+const bazaarContainer = document.getElementById("bazaar-container")
+const pentasContainer = document.getElementById("pentas-container")
+const fashionContainer = document.getElementById("fashion-container")
+const quizContainer = document.getElementById("quiz-container")
+const progressContainer = document.getElementById("progress-container")
+const footer = document.querySelector("footer")
+
 const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU3MjUyMDgsImlhdCI6MTY5NTYxMzYwOCwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.48oLqvUO7IsJT2RvZ6VHOCxfAR0Cylcus4N_P-Vz7Mp7EpC0hKBchK9pAuHna8nD6DisbUUqIYBXKPFR-S6mGw"
+const progressBar = document.getElementById("progress-bar")
+
+//Points
+const aboutUsPoint = document.getElementById("about-us-point")
+const bazaarPoint = document.getElementById("bazaar-point")
+const pentasPoint = document.getElementById("pentas-point")
+const fashionPoint = document.getElementById("fashion-point")
+
 const aboutUsPage = { 
 	"what": "Pancasija merupakan website yang dikhususkan untuk proyek P5 jurusan kami. Tujuan dari website ini untuk memberi informasi kepada pembaca tentang proyek kami.",
 
@@ -39,7 +58,11 @@ const foodPrices = {
 let range = 3
 let page = "who"
 let imageChoice = "salome"
-let choice;
+let choice, lastScroll;
+
+progressContainer.style.height = `${welcomePageContainer.scrollHeight + aboutUsContainer.scrollHeight + bazaarContainer.scrollHeight + pentasContainer.scrollHeight + fashionContainer.scrollHeight}px` 
+
+// aboutUsPoint.style.top = 
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -77,8 +100,6 @@ function triggerNavbar(x) {
 	}
 	x.classList.toggle("change");
 }
-
-// Function to handle the scroll event
 
 Array.from(navbar.children).forEach((child) => {
 	if (!child.classList.contains("ignored") && child.id != "menu-header"){
@@ -157,6 +178,47 @@ Array.from(foodContainer.children).forEach(child => {
 })
 
 window.addEventListener('scroll', () => {
+	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	let scrolled = (winScroll / height) * 100;
+	if (scrolled >= 95){
+		scrolled = 100;
+	}
+	console.log(scrolled)
+	progressBar.style.height = scrolled + "%";
+	if (scrolled >= 10){
+		aboutUsPoint.style.height = "10%"
+		aboutUsPoint.style.transform = "scale(1.7)"
+	} else {
+		aboutUsPoint.style.height = "1%"
+		aboutUsPoint.style.transform = ""
+	}
+
+	if (scrolled >= 30){
+		bazaarPoint.style.height = "10%"
+		bazaarPoint.style.transform = "scale(1.7)"
+	} else {
+		bazaarPoint.style.height = "1%"
+		bazaarPoint.style.transform = ""
+	}
+
+	if (scrolled >= 55){
+		pentasPoint.style.height = "10%"
+		pentasPoint.style.transform = "scale(1.7)"
+	} else {
+		pentasPoint.style.height = "1%"
+		pentasPoint.style.transform = ""
+	}
+
+	if (scrolled >= 70){
+		fashionPoint.style.height = "10%"
+		fashionPoint.style.transform = "scale(1.7)"
+	} else {
+		fashionPoint.style.height = "1%"
+		fashionPoint.style.transform = ""
+	}
+	
+	lastScroll = scrolled
 	if (isElementInViewport(header)) {
 		header.style.opacity = 1;
 		header.style.transform = "translateY(-15px)"
