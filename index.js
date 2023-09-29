@@ -1,3 +1,4 @@
+//Others
 const header = document.getElementById("welcome")
 const navbar = document.getElementById("navbar")
 const navitems = document.getElementById("navitems")
@@ -19,15 +20,18 @@ const quizContainer = document.getElementById("quiz-container")
 const progressContainer = document.getElementById("progress-container")
 const footer = document.querySelector("footer")
 
-const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTU3MjUyMDgsImlhdCI6MTY5NTYxMzYwOCwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.48oLqvUO7IsJT2RvZ6VHOCxfAR0Cylcus4N_P-Vz7Mp7EpC0hKBchK9pAuHna8nD6DisbUUqIYBXKPFR-S6mGw"
-const progressBar = document.getElementById("progress-bar")
+//Database url
+const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTYwODI3OTksImlhdCI6MTY5NTk3MTE5OSwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.lbB5bWiIvMtkXOFp34vTvQalLiT24lm9BJRKmB5yI4F-Tnzu-9D7BQloBFtNNzD0YUYqWLwXGf6KwC6pkDg9hA"
 
-//Points
+//progress-bars
+const progressBar = document.getElementById("progress-bar")
 const aboutUsPoint = document.getElementById("about-us-point")
 const bazaarPoint = document.getElementById("bazaar-point")
 const pentasPoint = document.getElementById("pentas-point")
 const fashionPoint = document.getElementById("fashion-point")
 
+
+//Data/information regarding a certain topic
 const aboutUsPage = { 
 	"what": "Pancasija merupakan website yang dikhususkan untuk proyek P5 jurusan kami. Tujuan dari website ini untuk memberi informasi kepada pembaca tentang proyek kami.",
 
@@ -37,7 +41,6 @@ const aboutUsPage = {
 
 	"where": "Acara kami akan diselenggarakan di halaman sekolah SMKN 1 Jakarta. Kami akan buka stand khusus. Bisa dicari di lapangan nanti. Kami akan tunggu kedatangan kalian!"
 }
-
 const foodDescription = {
 	"salome": "<a href='https://www.detik.com/bali/nusra/d-6390608/mencicipi-kenyal-enaknya-salome-cilok-dari-dompu-yang-bikin-nagih#:~:text=Salome%20terbuat%20dari%20olahan%20daging,mencolok%20pada%20rasa%20dan%20varian.' class='link' target='_blank'>Salome</a> terbuat dari olahan daging ayam dicampur sedikit tepung kanji (pentol daging). Bentuk atau rupanya dan proses pembuatannya hampir sama dengan cilok. Namun ada sedikit perbedaan yang mencolok pada rasa dan varian.",
 	"susu-goreng": "<a href='https://gacasshop.com/makanan-khas-rote-yang-unik-dan-lezat-untuk-dicoba/' class='link' target='_blank'>Susu Goreng</a> adalah salah satu hasil olahan susu tradisional masyarakat Rote Nusa Tenggara Timur (NTT), yang terbuat dari susu kerbau dengan campuran gula lontar melalui proses pemanasan.",
@@ -55,14 +58,13 @@ const foodPrices = {
 	"catemak-jagung": "<a href='https://www.nttmediaexpress.com/region-ntt/4249122460/catemak-jagung-kuliner-khas-ntt-makanan-penutup-yang-menarik-untuk-dicoba-resep-mudah-didapat#:~:text=LEMBATA%2C%20NTT%20EXPRESS.COM%20%2D,yang%20sangat%20menggugah%20selera%2C%20lho.' class='link' target='_blank'>Catemak Jagung</a> kami dibuat oleh Rasya dengan harga 5 ribu",
 }
 
+//Variables
 let range = 3
 let page = "who"
 let imageChoice = "salome"
 let choice, lastScroll;
 
-progressContainer.style.height = `${welcomePageContainer.scrollHeight + aboutUsContainer.scrollHeight + bazaarContainer.scrollHeight + pentasContainer.scrollHeight + fashionContainer.scrollHeight}px` 
-
-// aboutUsPoint.style.top = 
+progressContainer.style.height = `${welcomePageContainer.offsetHeight + aboutUsContainer.offsetHeight + bazaarContainer.offsetHeight + pentasContainer.offsetHeight}px` 
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -99,6 +101,28 @@ function triggerNavbar(x) {
 		range = 3
 	}
 	x.classList.toggle("change");
+}
+
+async function get(key, raw = false) {
+	return fetch(db + "/" + key, {mode: "no-cors"})
+	.then(res => res.text())
+	.then(text => {
+		if (raw){return text;}
+		if (!text){return null;}
+		
+		let jsonParsed;
+		try {
+			jsonParsed = JSON.parse(text);
+		} catch (_err) {
+			throw new SyntaxError(`Failed to parse ${key} as JSON data`)
+		}
+
+		if (jsonParsed === null || jsonParsed === undefined) {
+			return null;
+		}
+
+		return jsonParsed
+	})
 }
 
 Array.from(navbar.children).forEach((child) => {
@@ -202,7 +226,7 @@ window.addEventListener('scroll', () => {
 		bazaarPoint.style.transform = ""
 	}
 
-	if (scrolled >= 55){
+	if (scrolled >= 52){
 		pentasPoint.style.height = "10%"
 		pentasPoint.style.transform = "scale(1.7)"
 	} else {

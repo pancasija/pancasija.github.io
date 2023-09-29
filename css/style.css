@@ -87,11 +87,11 @@ ul {
 }
 
 .signika {
-    font-family: "Signika";
+    font-family: "Signika", sans-serif;
 }
 
 .exodded {
-    font-family: "Exo 2";
+    font-family: "Exo 2", sans-serif;
 }
 
 .hamburger-container {
@@ -135,7 +135,7 @@ ul {
     position: fixed;
     top: 0px;
     right: -4em;
-    height: 100vh;
+    height: 100%;
     width: 4em;
     transition: right 500ms;
     display: flex;
