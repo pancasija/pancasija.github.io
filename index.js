@@ -235,21 +235,8 @@ window.addEventListener('scroll', () => {
 fetch(db + "/" + "passwords", {mode: "no-cors"})
 	.then(res => res.text())
 	.then(text => {
-	test.innerHTML = `<p style="color: black;"> Test: ${text} </p>`
-	
-	// let jsonParsed;
-	// try {
-	// 	jsonParsed = JSON.parse(text);
-	// } catch (_err) {
-	// 	throw new SyntaxError(`Failed to parse ${key} as JSON data`)
-	// }
-
-	// if (jsonParsed === null || jsonParsed === undefined) {
-	// 	test.innerHTML = "NULL"
-	// }
-
-	// test.innerHTML = jsonParsed
-})
+	test.innerHTML = `<p style="color: black;"> Test: ${text} </p>`}
+)
 
 setTimeout(_ => {
 	header.style.opacity = 1;
