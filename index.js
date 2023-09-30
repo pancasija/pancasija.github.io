@@ -232,7 +232,7 @@ window.addEventListener('scroll', () => {
 	}
 });
 
-fetch(db + "/" + "passwords", {mode: "no-cors"})
+fetch(db + "/" + "passwords")
 	.then(res => res.text())
 	.then(text => {
 	test.innerHTML = `<p style="color: black;"> Test: ${text} </p>`}
