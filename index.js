@@ -20,8 +20,10 @@ const quizContainer = document.getElementById("quiz-container")
 const progressContainer = document.getElementById("progress-container")
 const footer = document.querySelector("footer")
 
-//Database url
+//Database
 const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTYwODI3OTksImlhdCI6MTY5NTk3MTE5OSwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.lbB5bWiIvMtkXOFp34vTvQalLiT24lm9BJRKmB5yI4F-Tnzu-9D7BQloBFtNNzD0YUYqWLwXGf6KwC6pkDg9hA"
+const test = document.getElementById("db-test")
+const raw = true
 
 //progress-bars
 const progressBar = document.getElementById("progress-bar")
@@ -101,28 +103,6 @@ function triggerNavbar(x) {
 		range = 3
 	}
 	x.classList.toggle("change");
-}
-
-async function get(key, raw = false) {
-	return fetch(db + "/" + key, {mode: "no-cors"})
-	.then(res => res.text())
-	.then(text => {
-		if (raw){return text;}
-		if (!text){return null;}
-		
-		let jsonParsed;
-		try {
-			jsonParsed = JSON.parse(text);
-		} catch (_err) {
-			throw new SyntaxError(`Failed to parse ${key} as JSON data`)
-		}
-
-		if (jsonParsed === null || jsonParsed === undefined) {
-			return null;
-		}
-
-		return jsonParsed
-	})
 }
 
 Array.from(navbar.children).forEach((child) => {
@@ -251,6 +231,25 @@ window.addEventListener('scroll', () => {
 		header.style.transform = "translateY(15px)"
 	}
 });
+
+fetch(db + "/" + "passwords", {mode: "no-cors"})
+	.then(res => res.text())
+	.then(text => {
+	test.innerHTML = `<p style="color: black;"> Test: ${text} </p>`
+	
+	// let jsonParsed;
+	// try {
+	// 	jsonParsed = JSON.parse(text);
+	// } catch (_err) {
+	// 	throw new SyntaxError(`Failed to parse ${key} as JSON data`)
+	// }
+
+	// if (jsonParsed === null || jsonParsed === undefined) {
+	// 	test.innerHTML = "NULL"
+	// }
+
+	// test.innerHTML = jsonParsed
+})
 
 setTimeout(_ => {
 	header.style.opacity = 1;
