@@ -14,7 +14,7 @@
     }
 
     .click {
-        border: 2px solid white;
+        border: 1px solid white;
     }
 
     .blurpled-neon {
@@ -29,22 +29,41 @@
         width: 1%;
     }
     
-    .question {
-        font-size: 0.7em;
-        width: 5em;
-        flex: auto;
+    #about-us-container {
+        flex-direction: column;
     }
 
-    #about-us-container {
-        flex-direction: row-reverse;
+    #about-us-card {
+        margin-top: -3em;
+        margin-left: -2em;
+        width: 12em;
+        max-width: 50ch;
+    }
+
+    #questions {
+        width: 9em;
+        margin-left: -1em;
+    }
+    
+    .question {
+        font-size: 0.7em;
+        width: 4em;
+        flex: auto;
+    }
+    
+    #bazaar-information {
+        width: 10em;
+        margin-left: -1.5em;
     }
 
     #menu {
         flex-direction: column-reverse;
+        width: 12em;
+        margin-left: -1.6em;
     }
 
     #food-section > div {
-        width: 2.8em;
+        width: 3em;
         height: 1.5em;
     }
     
@@ -102,6 +121,11 @@
     #progress-container {
         width: 1%;
     }
+
+    #questions {
+        width: fit-content;
+        margin-left: auto;
+    }
     
     .question {
         font-size: 0.7em;
@@ -113,8 +137,22 @@
         flex-direction: column;
     }
 
+    #about-us-card {
+        margin-top: 0em;
+        margin-left: auto;
+        width: fit-content;
+        max-width: 50ch;
+    }
+
+    #bazaar-information {
+        width: fit-content;
+        margin-left: auto;
+    }
+
     #menu {
         flex-direction: column-reverse;
+        width: fit-content;
+        margin-left: auto;
     }
 
     #food-section > div {
@@ -249,9 +287,13 @@
     #menu {
         flex-direction: row;
     }
+
+    #bazaar-information {
+        margin-right: 6.3em;
+    }
     
     #food-section > div {
-        width: 3.2em;
+        width: 3em;
         height: 2.5em;
     }
 
