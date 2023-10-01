@@ -108,6 +108,7 @@ function triggerNavbar(x) {
 		range = 3
 	}
 	wrapper.classList.toggle("unfocus")
+	footer.classList.toggle("unfocus")
 	x.classList.toggle("change");
 }
 

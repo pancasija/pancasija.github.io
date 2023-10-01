@@ -270,6 +270,7 @@ section {
     background-image: url("../imgs/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: right 50% top 50%;
     position: relative;
 }
 
@@ -286,15 +287,19 @@ section {
 }
 
 #about-us-container {
+    display: flex;
+    flex-direction: column;
     border-top: 1px solid rgb(58, 63, 76);
 }
 
-#about-us-card > p {
-    transition: opacity 300ms;
-}
 #about-us-container {
     background-color: var(--dark);
     height: 70vh
+}
+
+
+#about-us-card > p {
+    transition: opacity 300ms;
 }
 
 #about-us-card > h1 > span{
@@ -464,10 +469,11 @@ section {
 }
 
 .check {
-    border: 3px solid red;
+    border: 1px solid red;
 }
 
 #pentas-container {
+    display: flex;
     background-color: var(--dark);
     height: 100vh;
     position: relative
@@ -486,9 +492,6 @@ section {
     margin: -1em
 }
 
-#pentas-container {
-    display: flex;
-}
 
 #pentas-information-container{
     height: fit-content;
@@ -539,6 +542,7 @@ footer {
     height: 30vh;
     padding: 1em;
     border-top: 1px solid rgb(58, 63, 76);
+    transition: filter 200ms;
 }
 
 #item-wrapper {

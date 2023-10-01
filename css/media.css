@@ -13,6 +13,72 @@
         font-size: 0.5rem;
     }
 
+    .click {
+        border: 2px solid white;
+    }
+
+    .blurpled-neon {
+        text-shadow: 0px 0px 20px var(--blurple), -1px -1px 0 white, 1px  1px 0 black
+    }
+
+    #welcome {
+        font-size: 0.4em;
+    }
+
+    #progress-container {
+        width: 1%;
+    }
+    
+    .question {
+        font-size: 0.7em;
+        width: 5em;
+        flex: auto;
+    }
+
+    #about-us-container {
+        flex-direction: row-reverse;
+    }
+
+    #menu {
+        flex-direction: column-reverse;
+    }
+
+    #food-section > div {
+        width: 2.8em;
+        height: 1.5em;
+    }
+    
+    #information >  h2 {
+        font-size: 0.6em;
+    }
+    
+    #information > p {
+        font-size: 0.5em;
+    }
+
+    #pict-container {
+        position: absolute;
+        flex-direction: row;
+        bottom: 3em;
+        left: 3.5em;
+    }
+
+    #pict-container > img {
+        width: 100px;
+    }
+
+    #fashion-pict-container {
+        right: 0.5em;
+    }
+
+    #fashion-information-container {
+        margin-left: -4em;
+    }
+
+    #fashion-pict-container > img {
+        width: 100px;
+    }
+
 }
 
 @media (min-width: 475px) {
@@ -21,13 +87,79 @@
         font-size: 0.6rem;
     }
 
+    .click {
+        border: 2px solid white;
+    }
+
+    .blurpled-neon {
+        text-shadow: 0px 0px 20px var(--blurple), -1px -1px 0 white, 1px  1px 0 black
+    }
+
+    #welcome {
+        font-size: 0.4em;
+    }
+
+    #progress-container {
+        width: 1%;
+    }
+    
+    .question {
+        font-size: 0.7em;
+        width: 4.5em;
+        flex: auto;
+    }
+
+    #about-us-container {
+        flex-direction: column;
+    }
+
+    #menu {
+        flex-direction: column-reverse;
+    }
+
+    #food-section > div {
+        width: 2.8em;
+        height: 1.5em;
+    }
+    
+    #information >  h2 {
+        font-size: 0.7em;
+    }
+    
+    #information > p {
+        font-size: 0.5em;
+    }
+
+    #pict-container {
+        position: absolute;
+        flex-direction: row;
+        bottom: 3em;
+        left: 3.5em;
+    }
+
+    #pict-container > img {
+        width: 150px;
+    }
+
+    #fashion-pict-container {
+        right: 0.5em;
+    }
+
+    #fashion-information-container {
+        margin-left: -4em;
+    }
+
+    #fashion-pict-container > img {
+        width: 150px;
+    }
+
 }
 
 @media (min-width: 640px) {
     .container{
         max-width: 640px;
         font-size: 0.7rem;
-    }
+    }  
 
     .click {
         border: 2px solid white;
@@ -40,6 +172,10 @@
     #welcome {
         font-size: 0.5em;
     }
+
+    #progress-container {
+        width: 1%;
+    }
     
     .question {
         font-size: 0.8em;
@@ -47,8 +183,12 @@
         flex: auto;
     }
 
+    #menu {
+        flex-direction: column-reverse;
+    }
+
     #food-section > div {
-        width: 1.83em;
+        width: 3em;
         height: 1.5em;
     }
     
@@ -57,25 +197,34 @@
     }
     
     #information > p {
-        font-size: 0.4em;
+        font-size: 0.5em;
     }
 
-    #pick-container {
+    #pict-container {
         position: absolute;
-        bottom: 4em;
+        flex-direction: row;
+        bottom: 3em;
         left: 3.5em;
     }
 
     #pict-container > img {
         width: 200px;
     }
+
+    #fashion-pict-container {
+        right: 1em;
+    }
+
+    #fashion-information-container {
+        margin-left: -3em;
+    }
+
+    #fashion-pict-container > img {
+        width: 160px;
+    }
 }
 
 @media (min-width: 1024px) {
-    p {
-        font-size: 0.5em;
-    }
-
     .container{
         max-width: 1024px;
         font-size: 1rem;
@@ -90,9 +239,16 @@
     }
 
     #welcome {
-        font-size: 0.9em;
+        font-size: 0.7em;
     }
-    
+
+    #progress-container {
+        width: 0.5%;
+    }
+
+    #menu {
+        flex-direction: row;
+    }
     
     #food-section > div {
         width: 3.2em;
@@ -103,27 +259,33 @@
         font-size: 1em;
     }
 
+    #pict-container {
+        position: static;
+        flex-direction: column;
+        bottom: 3em;
+        left: 3.5em;
+    }
+
     #pict-container > img {
         width: 300px;
     }
 
     #pentas-information-container {
-        margin-left: 1em;
+        margin-left: 3em;
         margin-top: -0.6em;
     }
 
-    #fashion-pict-container {
-        right: 4em;
+    #fashion-information-container {
+        margin-left: -1em;
     }
-
-    #fashion-pict {
-        width: 250px;
-    }
-
+    
     #fashion-pict-container {
         right: 2em;
     }
-
+    
+    #fashion-pict-container > img {
+        width: 250px;
+    }
 }
 
 @media (min-width: 1280px) {
@@ -132,13 +294,17 @@
         font-size: 1.2rem;
     }
 
+    #welcome {
+        font-size: 0.9em;
+    }
+
     #food-section > div {
         width: 4em;
         height: 2.5em;
     }
 
     #pict-container > img {
-        width: 500px;
+        width: 400px;
     }
 
     #pentas-information-container {
@@ -151,11 +317,7 @@
     }
 
     #fashion-pict-container > img {
-        width: 400px;
-    }
-
-    element > p {
-        font-size: 10em;
+        width: 300px;
     }
 }
 
