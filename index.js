@@ -19,6 +19,7 @@ const fashionContainer = document.getElementById("fashion-container")
 const quizContainer = document.getElementById("quiz-container")
 const progressContainer = document.getElementById("progress-container")
 const footer = document.querySelector("footer")
+const wrapper = document.getElementById("wrapper")
 
 //Database
 const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTYwODI3OTksImlhdCI6MTY5NTk3MTE5OSwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.lbB5bWiIvMtkXOFp34vTvQalLiT24lm9BJRKmB5yI4F-Tnzu-9D7BQloBFtNNzD0YUYqWLwXGf6KwC6pkDg9hA"
@@ -66,7 +67,11 @@ let page = "who"
 let imageChoice = "salome"
 let choice, lastScroll;
 
-progressContainer.style.height = `${welcomePageContainer.offsetHeight + aboutUsContainer.offsetHeight + bazaarContainer.offsetHeight + pentasContainer.offsetHeight}px` 
+progressContainer.style.height = `${wrapper.clientHeight}px` 
+aboutUsPoint.style.top = `${aboutUsContainer.clientHeight * 0.25}px`
+bazaarPoint.style.top = `${aboutUsContainer.clientHeight + (bazaarContainer.clientHeight * 0.25)}px`
+pentasPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + (pentasContainer.clientHeight * 0.25)}px`
+fashionPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + pentasContainer.clientHeight + (fashionContainer.clientHeight * 0.25)}px`
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();
@@ -189,33 +194,34 @@ window.addEventListener('scroll', () => {
 		scrolled = 100;
 	}
 	console.log(scrolled)
-	progressBar.style.height = scrolled + "%";
-	if (scrolled >= 10){
-		aboutUsPoint.style.height = "10%"
+	let pixelScrolled = progressContainer.clientHeight * (scrolled/100)
+	progressBar.style.height = `${pixelScrolled}px`;
+	if (pixelScrolled >= (parseInt(aboutUsPoint.style.top.replace("px", "")) + 50)){
+		aboutUsPoint.style.height = "5%"
 		aboutUsPoint.style.transform = "scale(1.7)"
 	} else {
 		aboutUsPoint.style.height = "1%"
 		aboutUsPoint.style.transform = ""
 	}
 
-	if (scrolled >= 30){
-		bazaarPoint.style.height = "10%"
+	if (pixelScrolled >= (parseInt(bazaarPoint.style.top.replace("px", "")) + 50)){
+		bazaarPoint.style.height = "7%"
 		bazaarPoint.style.transform = "scale(1.7)"
 	} else {
 		bazaarPoint.style.height = "1%"
 		bazaarPoint.style.transform = ""
 	}
 
-	if (scrolled >= 52){
-		pentasPoint.style.height = "10%"
+	if (pixelScrolled >= (parseInt(pentasPoint.style.top.replace("px", "")) + 50)){
+		pentasPoint.style.height = "7%"
 		pentasPoint.style.transform = "scale(1.7)"
 	} else {
 		pentasPoint.style.height = "1%"
 		pentasPoint.style.transform = ""
 	}
 
-	if (scrolled >= 70){
-		fashionPoint.style.height = "10%"
+	if (pixelScrolled >= (parseInt(fashionPoint.style.top.replace("px", "")) + 50)){
+		fashionPoint.style.height = "7%"
 		fashionPoint.style.transform = "scale(1.7)"
 	} else {
 		fashionPoint.style.height = "1%"
@@ -232,11 +238,13 @@ window.addEventListener('scroll', () => {
 	}
 });
 
-fetch(db + "/" + "passwords")
-	.then(res => res.text())
-	.then(text => {
-	test.innerHTML = `<p style="color: black;"> Test: ${text} </p>`}
-)
+window.addEventListener("resize", (event) => {
+	progressContainer.style.height = `${wrapper.clientHeight}px` 
+	aboutUsPoint.style.top = `${aboutUsContainer.clientHeight * 0.25}px`
+	bazaarPoint.style.top = `${aboutUsContainer.clientHeight + (bazaarContainer.clientHeight * 0.25)}px`
+	pentasPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + (pentasContainer.clientHeight * 0.25)}px`
+	fashionPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + pentasContainer.clientHeight + (fashionContainer.clientHeight * 0.25)}px`
+})
 
 setTimeout(_ => {
 	header.style.opacity = 1;

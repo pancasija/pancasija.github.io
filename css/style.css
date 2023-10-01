@@ -18,6 +18,7 @@ html {
     font-size: 2.5rem;
     color: aliceblue;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 html, body {
@@ -196,7 +197,6 @@ ul {
 
 section {
     width: 100%;
-    height: 100vh;
     padding: 3em;
 }
 
@@ -214,6 +214,7 @@ section {
     left: 3px;
     border-radius: 10px;
     z-index: 1;
+    border: 1px solid #27005D;
 }
 
 #progress-bar {
@@ -236,20 +237,8 @@ section {
     transition: height 1s, transform 500ms;
 }
 
-#about-us-point {
-    top: 3em;
-}
-
-#bazaar-point {
-    top: 20em
-}
-
-#pentas-point {
-    top: 43em;
-}
-
-#fashion-point {
-    top: 60em
+#welcome-page-container{
+    height: 100vh
 }
 
 .welcome-box {
@@ -259,14 +248,12 @@ section {
     left: 0.3em;
 }
 
-
 #welcome-description {
     font-size: 0.6em;
     letter-spacing: 0.5px;
     margin-top: 10px;
     width: 60ch;
 }
-
 
 #welcome-page-container {
     filter: brightness(0.4);
@@ -288,17 +275,9 @@ section {
     margin-top: 10px;
 }
 
-/* #about-us-container::after {
-    display: block;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0) 7%, rgba(1, 1, 3, 1) 50%);
-    width: 98.7vw;
-    height: 30%;
-    position: absolute;
-    top: 30em;
-    left: 0px;
-    content: "";
-} */
-
+#about-us-container {
+    border-top: 1px solid rgb(58, 63, 76);
+}
 
 #about-us-card > p {
     transition: opacity 300ms;
@@ -361,10 +340,11 @@ section {
 }
 
 #bazaar-information > h1 {
-    font-size: 1.9em;
+    font-size: 1.2em;
 }
+
 #bazaar-information > p{
-    font-size: 0.5em;
+    font-size: 0.4em;
     max-width: 60ch;
     text-align: justify;
 }
