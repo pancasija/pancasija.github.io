@@ -88,6 +88,10 @@
     .blurpled-neon {
         text-shadow: 0px 0px 20px var(--blurple), -2px -2px 0 white, 2px  2px 0 black
     }
+
+    #welcome {
+        font-size: 0.9em;
+    }
     
     
     #food-section > div {
@@ -124,7 +128,8 @@
 
 @media (min-width: 1280px) {
     .container{
-        max-width: 1280px
+        max-width: 1280px;
+        font-size: 1.2rem;
     }
 
     #food-section > div {
@@ -133,7 +138,7 @@
     }
 
     #pict-container > img {
-        width: 300px;
+        width: 500px;
     }
 
     #pentas-information-container {
@@ -146,7 +151,7 @@
     }
 
     #fashion-pict-container > img {
-        width: 300px;
+        width: 400px;
     }
 
     element > p {

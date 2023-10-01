@@ -202,11 +202,19 @@ section {
     background-color: var(--dark);
 }
 
+#wrapper {
+    transition: filter 200ms;
+}
+
 .reveal-when-scroll {
     font-size: 0.6em;
     opacity: 0;
     transform: translateY(15px);
     transition: transform 500ms, opacity 500ms;
+}
+
+.unfocus {
+    filter: brightness(0.3);
 }
 
 #progress-container {

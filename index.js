@@ -10,7 +10,7 @@ const foodContainer = document.getElementById("food-section")
 const foodInformationContainer = document.getElementById("information")
 const pentasInformationContainer = document.getElementById("pentas-information-container")
 
-//Containers with section element (except progress-container & footer)
+//Containers with section element (except progress-container & footer & wrapper)
 const welcomePageContainer  = document.getElementById("welcome-page-container")
 const aboutUsContainer = document.getElementById("about-us-container")
 const bazaarContainer = document.getElementById("bazaar-container")
@@ -107,6 +107,7 @@ function triggerNavbar(x) {
 		}, 100)
 		range = 3
 	}
+	wrapper.classList.toggle("unfocus")
 	x.classList.toggle("change");
 }
 
