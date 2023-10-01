@@ -65,7 +65,7 @@ const foodPrices = {
 let range = 3
 let page = "who"
 let imageChoice = "salome"
-let choice, lastScroll;
+let choice;
 
 progressContainer.style.height = `${wrapper.clientHeight}px` 
 aboutUsPoint.style.top = `${aboutUsContainer.clientHeight * 0.25}px`
@@ -188,13 +188,13 @@ Array.from(foodContainer.children).forEach(child => {
 
 window.addEventListener('scroll', () => {
 	let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+	let height = document.documentElement.scrollHeight - document.documentElement.clientHeight - footer.clientHeight;
 	let scrolled = (winScroll / height) * 100;
-	if (scrolled >= 95){
-		scrolled = 100;
+	if (scrolled > 100){
+		scrolled = 100
 	}
 	console.log(scrolled)
-	let pixelScrolled = progressContainer.clientHeight * (scrolled/100)
+	let pixelScrolled = (scrolled > 95) ? progressContainer.clientHeight * (scrolled/100):progressContainer.clientHeight * (scrolled/100) - 10
 	progressBar.style.height = `${pixelScrolled}px`;
 	if (pixelScrolled >= (parseInt(aboutUsPoint.style.top.replace("px", "")) + 50)){
 		aboutUsPoint.style.height = "5%"
@@ -228,7 +228,6 @@ window.addEventListener('scroll', () => {
 		fashionPoint.style.transform = ""
 	}
 	
-	lastScroll = scrolled
 	if (isElementInViewport(header)) {
 		header.style.opacity = 1;
 		header.style.transform = "translateY(-15px)"

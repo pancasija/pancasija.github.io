@@ -29,33 +29,83 @@
         font-size: 0.7rem;
     }
 
-    /* .question {
-        font-size: 0.562em;
+    .click {
+        border: 2px solid white;
+    }
+
+    .blurpled-neon {
+        text-shadow: 0px 0px 20px var(--blurple), -1px -1px 0 white, 1px  1px 0 black
+    }
+
+    #welcome {
+        font-size: 0.5em;
+    }
+    
+    .question {
+        font-size: 0.8em;
+        width: 4.5em;
+        flex: auto;
     }
 
     #food-section > div {
         width: 1.83em;
         height: 1.5em;
     }
-
-    #information > h2 {
-        font-size: 0.65em;
+    
+    #information >  h2 {
+        font-size: 0.7em;
     }
-
+    
     #information > p {
         font-size: 0.4em;
-    } */
+    }
 
+    #pick-container {
+        position: absolute;
+        bottom: 4em;
+        left: 3.5em;
+    }
 
+    #pict-container > img {
+        width: 200px;
+    }
 }
 
 @media (min-width: 1024px) {
+    p {
+        font-size: 0.5em;
+    }
+
     .container{
         max-width: 1024px;
+        font-size: 1rem;
+    }
+
+    .click {
+        border: 3px solid white;
+    }
+
+    .blurpled-neon {
+        text-shadow: 0px 0px 20px var(--blurple), -2px -2px 0 white, 2px  2px 0 black
     }
     
+    
+    #food-section > div {
+        width: 3.2em;
+        height: 2.5em;
+    }
+
+    #information > h2 {
+        font-size: 1em;
+    }
+
     #pict-container > img {
         width: 300px;
+    }
+
+    #pentas-information-container {
+        margin-left: 1em;
+        margin-top: -0.6em;
     }
 
     #fashion-pict-container {
@@ -65,30 +115,16 @@
     #fashion-pict {
         width: 250px;
     }
-    /* #food-section > div {
-        width: 4em;
-        height: 2.5em;
-    }
-
-
-    #information > h2 {
-        font-size: 1em;
-    }
 
     #fashion-pict-container {
-        right: 4em;
+        right: 2em;
     }
-
-    #fashion-pict-container > img {
-        width: 300px;
-    } */
 
 }
 
 @media (min-width: 1280px) {
     .container{
-        max-width: 1280px;
-        font-size: 1.2rem;
+        max-width: 1280px
     }
 
     #food-section > div {
@@ -97,11 +133,12 @@
     }
 
     #pict-container > img {
-        width: 400px;
+        width: 300px;
     }
 
-    #information > h2 {
-        font-size: 1em;
+    #pentas-information-container {
+        margin-left: 2em;
+        margin-top: -0.6em;
     }
 
     #fashion-pict-container {
@@ -110,6 +147,10 @@
 
     #fashion-pict-container > img {
         width: 300px;
+    }
+
+    element > p {
+        font-size: 10em;
     }
 }
 

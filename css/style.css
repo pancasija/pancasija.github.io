@@ -18,10 +18,11 @@ html {
     font-size: 2.5rem;
     color: aliceblue;
     scroll-behavior: smooth;
+    background-color: var(--dark);
     overflow-x: hidden;
 }
 
-html, body {
+body {
     height: 100%;
 }
 
@@ -98,7 +99,7 @@ ul {
 .hamburger-container {
     position: fixed;
     top: 0px;
-    right: 5px;
+    right: 10px;
     cursor: pointer;
     z-index: 1;
     transition: all 200ms;
@@ -198,6 +199,7 @@ ul {
 section {
     width: 100%;
     padding: 3em;
+    background-color: var(--dark);
 }
 
 .reveal-when-scroll {
@@ -238,7 +240,7 @@ section {
 }
 
 #welcome-page-container{
-    height: 100vh
+    height: 100vh;
 }
 
 .welcome-box {
@@ -252,7 +254,7 @@ section {
     font-size: 0.6em;
     letter-spacing: 0.5px;
     margin-top: 10px;
-    width: 60ch;
+    width: 35ch;
 }
 
 #welcome-page-container {
@@ -309,13 +311,14 @@ section {
 
 #about-us-description {
     font-size: 0.4em;
+    max-width: 80ch;
+    text-align: justify;
 }
 
 #questions {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start;
     gap: 1em;
     margin-top: 1em;
     padding: 1em;
@@ -462,12 +465,11 @@ section {
     position: relative
 }
 
-#pict-container {
-    top: 0em;
-    left: 2.2em;
+#pict-container {   
     display: flex;
     flex-direction: column;
     gap: 3em;
+    bottom: 5em;
 }
 
 #pict-container > img {
