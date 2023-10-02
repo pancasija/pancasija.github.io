@@ -157,10 +157,10 @@
     }
 
     #about-us-card {
-        margin-top: 0em;
+        margin-top: auto;
         margin-left: auto;
-        width: fit-content;
         max-width: 50ch;
+        width: 14em;
     }
 
     #bazaar-container {
@@ -169,8 +169,9 @@
     }
 
     #bazaar-information {
-        width: fit-content;
         margin-left: auto;
+        width: 15em;
+        max-width: 70ch;
     }
 
     #menu {
@@ -179,24 +180,28 @@
         margin-left: auto;
     }
 
-    #food-section > div {
-        width: 2.8em;
-        height: 1.5em;
-    }
-    
-    #information >  h2 {
-        font-size: 0.7em;
-    }
-    
-    #information > p {
-        font-size: 0.5em;
+    #information {
+        width: 13em;
     }
 
+    #information > p {
+        font-size: 0.4em;
+    }
+
+    #food-section > div {
+        width: 3em;
+        height: 2em;
+    }
+
+    #pentas-container {
+        width: 14em;
+    }
+    
     #pict-container {
         position: absolute;
         flex-direction: row;
-        bottom: 3em;
-        left: 3.2em;
+        bottom: 4em;
+        left: 4em;
     }
 
     #pict-container > img {
@@ -204,12 +209,12 @@
     }
 
     #fashion-pict-container {
-        right: 2em;
-        margin-top: -1em;
+        right: 1em;
+        margin-top: 0.5em;
     }
 
     #fashion-pict-container > img {
-        width: 120px;
+        width: 130px;
     }
     
     #fashion-information-container {
@@ -221,7 +226,7 @@
 @media (min-width: 640px) {
     .container{
         max-width: 640px;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
     }  
 
     .click {
@@ -244,11 +249,10 @@
         margin-left: -0.9em;
     }
 
-
     .question {
-        font-size: 0.45em;
+        font-size: 0.6em;
         width: 5em;
-        flex-direction: auto;
+        flex: auto
     }
 
     #menu {
@@ -265,7 +269,11 @@
     }
     
     #information > p {
-        font-size: 0.5em;
+        font-size: 0.4em;
+    }
+
+    #pentas-container {
+        width: 18em;
     }
 
     #pict-container {
@@ -281,7 +289,7 @@
 
     #fashion-pict-container {
         right: 1em;
-        margin-top: auto;
+        margin-top: 3em;
     }
 
     #fashion-information-container {
@@ -344,6 +352,12 @@
         width: 300px;
     }
 
+    #pentas-container {
+        width: fit-content;
+        margin-left: 1em;
+        height: fit-content;
+    }
+
     #pentas-information-container {
         margin-left: 3em;
         margin-top: -0.6em;
@@ -365,17 +379,25 @@
 @media (min-width: 1280px) {
     .container{
         max-width: 1280px;
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
 
     #welcome {
-        font-size: 0.7em;
+        font-size: 0.8em;
     
     }
 
     #food-section > div {
         width: 3.5em;
         height: 2em;
+    }
+
+    #about-us-card {
+        margin-right: 7.3em;
+    }
+
+    #questions {
+        margin-right: 5em;
     }
 
     #pict-container > img {
