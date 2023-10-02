@@ -204,6 +204,7 @@ section {
 
 #wrapper {
     transition: filter 200ms;
+    overflow-x: hidden;
 }
 
 .reveal-when-scroll {
@@ -509,6 +510,7 @@ section {
 
 #fashion-container {
     background-color: var(--dark);
+    display: flex;
 }
 
 #fashion-information-container > h2 {

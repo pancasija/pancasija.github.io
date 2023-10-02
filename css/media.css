@@ -10,7 +10,7 @@
 @media (min-width: 375px) {
     .container{
         max-width: 375px;
-        font-size: 0.5rem;
+        font-size: 0.6rem;
     }
 
     .click {
@@ -22,7 +22,7 @@
     }
 
     #welcome {
-        font-size: 0.4em;
+        font-size: 0.33em;
     }
 
     #progress-container {
@@ -50,6 +50,11 @@
         width: 4em;
         flex: auto;
     }
+
+    #bazaar-container {
+        margin-top: -3em;
+        margin-left: -0.3em;
+    }
     
     #bazaar-information {
         width: 10em;
@@ -63,8 +68,8 @@
     }
 
     #food-section > div {
-        width: 3em;
-        height: 1.5em;
+        width: 2.3em;
+        height: 2em;
     }
     
     #information >  h2 {
@@ -75,19 +80,32 @@
         font-size: 0.5em;
     }
 
+    #pentas-container {
+        margin-top: -4em;
+        margin-left: -1em;
+        width: 12em;
+        overflow-x: hidden;
+    }
+
     #pict-container {
         position: absolute;
         flex-direction: row;
         bottom: 3em;
-        left: 3.5em;
+        left: 3em;
     }
 
     #pict-container > img {
-        width: 100px;
+        width: 130px;
+    }
+
+    #fashion-information-container {
+        width: 12em;
+        margin-top: -3em;
     }
 
     #fashion-pict-container {
         right: 0.5em;
+        top: 3em;
     }
 
     #fashion-information-container {
@@ -115,7 +133,7 @@
     }
 
     #welcome {
-        font-size: 0.4em;
+        font-size: 0.3em;
     }
 
     #progress-container {
@@ -135,6 +153,7 @@
 
     #about-us-container {
         flex-direction: column;
+        margin-left: -0.9em;
     }
 
     #about-us-card {
@@ -142,6 +161,11 @@
         margin-left: auto;
         width: fit-content;
         max-width: 50ch;
+    }
+
+    #bazaar-container {
+        margin-top: auto;
+        margin-left: -0.9em;
     }
 
     #bazaar-information {
@@ -172,7 +196,7 @@
         position: absolute;
         flex-direction: row;
         bottom: 3em;
-        left: 3.5em;
+        left: 3.2em;
     }
 
     #pict-container > img {
@@ -180,17 +204,18 @@
     }
 
     #fashion-pict-container {
-        right: 0.5em;
-    }
-
-    #fashion-information-container {
-        margin-left: -4em;
+        right: 2em;
+        margin-top: -1em;
     }
 
     #fashion-pict-container > img {
-        width: 150px;
+        width: 120px;
     }
-
+    
+    #fashion-information-container {
+        margin-left: -4em;
+        margin-top: -4em
+    }
 }
 
 @media (min-width: 640px) {
@@ -212,13 +237,18 @@
     }
 
     #progress-container {
-        width: 1%;
+        width: 0.8%;
     }
-    
+
+    #bazaar-container {
+        margin-left: -0.9em;
+    }
+
+
     .question {
-        font-size: 0.8em;
-        width: 4.5em;
-        flex: auto;
+        font-size: 0.45em;
+        width: 5em;
+        flex-direction: auto;
     }
 
     #menu {
@@ -242,7 +272,7 @@
         position: absolute;
         flex-direction: row;
         bottom: 3em;
-        left: 3.5em;
+        left: 4.2em;
     }
 
     #pict-container > img {
@@ -251,10 +281,12 @@
 
     #fashion-pict-container {
         right: 1em;
+        margin-top: auto;
     }
 
     #fashion-information-container {
         margin-left: -3em;
+        margin-top: auto;
     }
 
     #fashion-pict-container > img {
@@ -293,12 +325,12 @@
     }
     
     #food-section > div {
-        width: 3em;
+        width: 3.2em;
         height: 2.5em;
     }
 
-    #information > h2 {
-        font-size: 1em;
+    #information > p {
+        font-size: 0.4em;
     }
 
     #pict-container {
@@ -337,16 +369,17 @@
     }
 
     #welcome {
-        font-size: 0.9em;
+        font-size: 0.7em;
+    
     }
 
     #food-section > div {
-        width: 4em;
-        height: 2.5em;
+        width: 3.5em;
+        height: 2em;
     }
 
     #pict-container > img {
-        width: 400px;
+        width: 350px;
     }
 
     #pentas-information-container {
