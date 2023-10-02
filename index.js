@@ -142,15 +142,15 @@ Array.from(questions.children).forEach((child) => {
 		} else if (page == "who"){
 			metadata.style.left = "0px"
 			metadata.innerText = "Tentang"
-			wordToMove.style.left = "3.5em"
+			wordToMove.style.left = "3.7em"
 		} else if (page == "when"){
 			metadata.style.left = "0px"
 			metadata.innerText = "Kapan Acara"
-			wordToMove.style.left = "5.5em"
+			wordToMove.style.left = "5.7em"
 		} else if (page == "where"){
 			metadata.style.left = "0px"
 			metadata.innerText = "Dimana Acara"
-			wordToMove.style.left = "6.1em"
+			wordToMove.style.left = "6.3em"
 		}
 		let aboutUsDescription = aboutUs.children[1];
 		aboutUsDescription.style.opacity = 0
