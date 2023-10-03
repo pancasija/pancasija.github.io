@@ -420,16 +420,8 @@ section {
     height: 2.5em;
 }
 
-#lawar-ayam {
-    background-image: url("../imgs/lawar.jpeg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 4em;
-    height: 2.5em;
-}
-
-#catemak-jagung {
-    background-image: url("../imgs/catemak-jagung.jpg");
+#ricebowl {
+    background-image: url("../imgs/riceball.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
     width: 4em;

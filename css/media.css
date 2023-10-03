@@ -384,7 +384,16 @@
 
     #welcome {
         font-size: 0.8em;
-    
+    }
+
+    #questions {
+        margin-top: -0.5em;
+        width: 20em;
+    }
+
+    .question {
+        font-size: 0.5em;
+        width: 6em;
     }
 
     #food-section > div {
