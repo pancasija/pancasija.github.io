@@ -71,7 +71,7 @@ Array.from(quizQuestions).forEach((question, index) => {
     })
 })
 
-credentialsButton.addEventListener("click", async event => {
+credentialsButton.addEventListener("click", async _ => {
     let name = document.getElementById("name-input").value
     let class_ = document.getElementById("class-input").value
     let password = document.getElementById("password-input").value
@@ -111,6 +111,8 @@ credentialsButton.addEventListener("click", async event => {
     .then(text => {
         console.log(text)
     })
+
+    await fetch(`${db}/quiz_start?name=${name}&class=${class_}&password=${password}&comment=${text}&username=${password}`, {method: "POST"})
     Array.from(quizQuestions).forEach(question => {
         question.style.display = "block"
     })
@@ -123,6 +125,7 @@ credentialsButton.addEventListener("click", async event => {
             Array.from(quizQuestions).forEach(question => {
                 question.style.display = "none"
             })
+            //TARO SESUAtu
             return;
         }
         let before = parseInt(seconds.innerHTML)
@@ -138,7 +141,7 @@ credentialsButton.addEventListener("click", async event => {
     credentialsButton.disabled = true
 })
 
-submit.addEventListener("click", _ => {
+submit.addEventListener("click", async _ => {
     if (!firstAnswer || !secondAnswer || !thirdAnswer || !fourthAnswer || !fifthAnswer || !sixthAnswer || !(document.getElementById("yanglain").value || seventhAnswer)){
         alert("Harap isi semuah pertanyaan")
         return;
@@ -154,10 +157,12 @@ submit.addEventListener("click", _ => {
     })
 
     if (!(firstAnswer.id == "komodo" && secondAnswer.id == "cendana" && thirdAnswer.id == "ricebowl-" && fourthAnswer.id == "ikan-bakar" && fifthAnswer.id == "sei" && sixthAnswer.id == "kupang" && Boolean(customText))){
+        await fetch(`${db}/user_response?username=${password}&successful=false&answers=${JSON.stringify([firstAnswer.id, secondAnswer.id, thirdAnswer.id, fourthAnswer.id, fifthAnswer.id, sixthAnswer.id, otherAnswer])}`, {method: "POST"})
         alert("Maaf jawaban ada yang salah. Terimakasih untuk mencoba quiz kami!");
 
     } else {
-        alert(`Halo ${name} dari kelas ${class_} jawaban kamu benar! password ${password} hangus. Terimakasih pesannya: ${customText}.\nJawaban kamu untuk perntayaan terakhir: ${otherAnswer}`)
+        await fetch(`${db}/user_response?username=${password}&successful=true&answers=${JSON.stringify([firstAnswer.id, secondAnswer.id, thirdAnswer.id, fourthAnswer.id, fifthAnswer.id, sixthAnswer.id, otherAnswer])}`, {method: "POST"})
+        alert(`Halo ${name} dari kelas ${class_} jawaban kamu benar! silakan SS pesan ini dan pergi ke stand SIJA untuk meredeem hadiah kamu!`)
     }
     clearInterval(timerInterval)
 })
