@@ -22,7 +22,7 @@ const footer = document.querySelector("footer")
 const wrapper = document.getElementById("wrapper")
 
 //Database
-const db = "https://kv.replit.com/v0/eyJhbGciOiJIUzUxMiIsImlzcyI6ImNvbm1hbiIsImtpZCI6InByb2Q6MSIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjb25tYW4iLCJleHAiOjE2OTYwODI3OTksImlhdCI6MTY5NTk3MTE5OSwiZGF0YWJhc2VfaWQiOiJkYzY1YmE2Ny1jZDg2LTRmZTMtYTYzZC02NjExMzQ2NzA2YmQiLCJ1c2VyIjoiVGhlR2Vub2NpZGUiLCJzbHVnIjoidGVzdGRiIn0.lbB5bWiIvMtkXOFp34vTvQalLiT24lm9BJRKmB5yI4F-Tnzu-9D7BQloBFtNNzD0YUYqWLwXGf6KwC6pkDg9hA"
+const db = "https://server-side-proxytest.thegenocide.repl.co"
 const test = document.getElementById("db-test")
 const raw = true
 
@@ -32,7 +32,6 @@ const aboutUsPoint = document.getElementById("about-us-point")
 const bazaarPoint = document.getElementById("bazaar-point")
 const pentasPoint = document.getElementById("pentas-point")
 const fashionPoint = document.getElementById("fashion-point")
-
 
 //Data/information regarding a certain topic
 const aboutUsPage = { 
@@ -70,6 +69,8 @@ aboutUsPoint.style.top = `${aboutUsContainer.clientHeight * 0.25}px`
 bazaarPoint.style.top = `${aboutUsContainer.clientHeight + (bazaarContainer.clientHeight * 0.25)}px`
 pentasPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + (pentasContainer.clientHeight * 0.25)}px`
 fashionPoint.style.top = `${aboutUsContainer.clientHeight + bazaarContainer.clientHeight + pentasContainer.clientHeight + (fashionContainer.clientHeight * 0.25)}px`
+
+// fetch(`${db}/view`, {method: "POST"})
 
 function isElementInViewport(element) {
 	const rect = element.getBoundingClientRect();

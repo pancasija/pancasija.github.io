@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/quiz.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiz</title>
+</head>
+<body>
+<!-- Kasi batas waktu 5 menit -->
+    <div id="timer">
+        <span id="timer-content">Sisa Waktu: <span id="seconds">240</span> Detik</span>
+    </div>
+    <br><br>
+    <div id="quiz-questions">
+        <div class="content-in-container">
+            <h1 align=center class="signika">Quiz</h1>
+            <br>
+            <p class="exodded">Selamat datang didalam quiz buatan kami! Disini kalian harus menjawab sebanyak <strong>7 pertanyaan</strong>. Jika benar semuah akan dikasih kupon atau potongan harga untuk menu kami</p>
+        </div>
+        <div class="content-in-container" id="credentials">
+            <h1 align="center" class="signika">Biodata</h1>
+            <br>
+            <p class="exodded">Masukan nama, kelas, pesan (apa aja), dan yang paling penting adalah <strong>password</strong> sekali pakai. Saat kalian pencet tombol submit, quiz akan mulai. Kalian dikasi waktu hanya 4 menit. Menggoogle pertanyaan akan <strong>membuat quiz gagal</strong></p>
+            <br>
+            <div id="credentials-input">
+                <div>
+                    <label class="exodded" for="name-input"><b>Masukan Nama</b></label><br>
+                    <input type="text" name="name-input" id="name-input" placeholder="Masukan Nama"><br>
+                </div>
+                <div>
+                    <label class="exodded" for="class-input"><b>Masukan Kelas</b></label><br>
+                    <input type="text" name="class-input" id="class-input" placeholder="Masukan Kelas"><br>
+                </div>
+                <div>
+                    <label class="exodded" for="password-input"><b>Masukan Password</b></label><br>
+                    <input type="text" name="password-input" id="password-input" placeholder="Masukan Password"><br>
+                </div>
+                <div>
+                    <label class="exodded" for="pesan"><b>Masukan Pesan</b></label><br>
+                    <input type="text" name="pesan" id="pesan" placeholder="Masukan Pesan"><br>
+                </div>
+            </div><br>
+            <div id="button-container">
+                <input class="hover-item" id="credentials-button" class="signika" type="button" value="Submit">
+            </div>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 1</h1>
+            <br>
+            <p class="exodded">NTT Merupakan salah satu provinsi di Indonesia yang memiliki berbagai macam jenis fauna. Salah satu fauna di NTT yang sangat terkenal dan memiliki pulau yang diberinama dari hewan tersebut adalah</p><br>
+            <input type="radio" name="komodo" id="komodo"> <label class="exodded" for="komodo">Komodo</label><br>
+            <input type="radio" name="kuskus" id="kuskus"> <label class="exodded" for="kuskus">Kuskus</label><br>
+            <input type="radio" name="babi-rusa" id="babi-rusa"> <label class="exodded" for="babi-rusa">Babi Rusa</label><br>
+            <input type="radio" name="semuahnya" id="semuahnya"> <label class="exodded" for="semuahnya">Semuahnya</label><br>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 2</h1>
+            <br>
+            <p class="exodded">NTT juga memiliki berbagai macam flora. Salah satunya merupakan flora yang bisa diolah menjadi <em>minyak atsiri</em> dan merupakan tumbahan yang dilindungi oleh negara. Flora tersebut adalah?</p><br>
+            <input type="radio" name="cendana" id="cendana"> <label class="exodded" for="cendana">Cendana</label><br>
+            <input type="radio" name="gaharu" id="gaharu"> <label class="exodded" for="gaharu">Gaharu</label><br>
+            <input type="radio" name="kayu-hitam" id="kayu-hitam"> <label class="exodded" for="kayu-hitam">Kayu Hitam</label><br>
+            <input type="radio" name="ajang-kelicung" id="ajang-kelicung"> <label class="exodded" for="ajang-kelicung">Ajang Kelicung</label><br>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 3</h1>
+            <br>
+            <p class="exodded">Berikut merupakan makanan khas daerah NTT yang kaya akan cita rasanya kecuali ...</p><br>
+            <input type="radio" name="lawar-ayam" id="lawar-ayam"> <label class="exodded" for="lawar-ayam">Lawar Ayam</label><br>
+            <input type="radio" name="es-sarang-burung" id="es-sarang-burung-"> <label class="exodded" for="es-sarang-burung-">Es Sarang Burung</label><br>
+            <input type="radio" name="moke" id="moke"> <label class="exodded" for="moke">Moke</label><br>
+            <input type="radio" name="ricebowl" id="ricebowl-"> <label class="exodded" for="ricebowl-">Ricebowl</label><br>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 4</h1>
+            <br>
+            <p class="exodded">Apa hidangan laut yang populer di NTT yang sering disajikan dalam acara khusus atau perayaan?</p><br>
+            <input type="radio" name="gurita-bakar" id="gurita-bakar"> <label class="exodded" for="gurita-bakar">Gurita Bakar</label><br>
+            <input type="radio" name="cumi-saus-padang" id="cumi-saus-padang"> <label class="exodded" for="cumi-saus-padang">Cumi Saus Padang</label><br>
+            <input type="radio" name="Ikan Bakar" id="ikan-bakar"> <label class="exodded" for="ikan-bakar">Ikan Bakar</label><br>
+            <input type="radio" name="scallop" id="scallop"> <label class="exodded" for="scallop">Scallop Saus Mentega</label><br>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 5</h1>
+            <br>
+            <p class="exodded">Selain makanan NTT yang kami buat, ada juga makanan tradisional NTT yang dimana berbahan dasar irisan daging yang dipanggang dengan batok kelapa selama berjam-jam yaitu ...</p><br>
+            <input type="radio" name="souffle" id="souffle"> <label class="exodded" for="souffle">Souffle</label><br>
+            <input type="radio" name="ayam-taliwang" id="ayam-taliwang"> <label class="exodded" for="ayam-taliwang">Ayam Taliwang</label><br>
+            <input type="radio" name="sei" id="sei"> <label class="exodded" for="sei">Se'i Babi</label><br>
+            <input type="radio" name="jagung-bose" id="jagung-bose"> <label class="exodded" for="jagung-bose">Ajang Jagung Bose</label><br>
+        </div>
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 6</h1>
+            <br>
+            <p class="exodded">NTT merupakan sebuah propinsi di Indonesia yang meliputi bagian timur pulau Nusa Tenggara, memiliki 22 kabupaten/kota, dan berada di Kepulauan Sunda Kecil. Apa ibukota NTT?</p><br>
+            <input type="radio" name="maumere" id="maumere"> <label class="exodded" for="maumere">Maumere</label><br>
+            <input type="radio" name="ruteng" id="ruteng"> <label class="exodded" for="ruteng">Ruteng</label><br>
+            <input type="radio" name="kupang" id="kupang"> <label class="exodded" for="kupang">Kupang</label><br>
+            <input type="radio" name="labuan-bajo" id="labuan-bajo"> <label class="exodded" for="labuan-bajo">Labuan Bajo</label><br>
+        </div>
+        <!-- Kalau pencet yang lain akan dibuat textarea yang dimana bisa mengetik nama semaunya -->
+        <div class="quiz-question content-in-container">
+            <h1 align=center class="signika">Pertanyaan 7</h1>
+            <br>
+            <p class="exodded" for="question-1">Sekarang ini merupakan pertanyaan paling susah, saya sarankan jangan takut salah! Yang penting dijawab dengan jujur untuk pertanyaan kali ini: Siapakah sepuh di SIJA????</p><br>
+            <input type="radio" name="pak-novi" id="pak-novi"> <label class="exodded" for="pak-novi">Pak Novi</label><br>
+            <input type="radio" name="pak-mujiantoro" id="pak-mujiantoro"> <label class="exodded" for="gaharu">Pak Mujiantoro</label><br>
+            <input type="radio" name="semuah" id="semuah"> <label class="exodded" for="semuah">Pega :&rpar;</label><br>
+            <input type="text" name="yanglain" placeholder="Yang Lain" id="yanglain">
+        </div>
+    </form>
+</body>
+<script src="quiz.js"></script>
+</html>
