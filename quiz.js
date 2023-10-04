@@ -116,16 +116,18 @@ credentialsButton.addEventListener("click", async _ => {
     Array.from(quizQuestions).forEach(question => {
         question.style.display = "block"
     })
-    timerInterval = setInterval(() => {
+    timerInterval = setInterval(async () => {
         if (seconds.innerHTML <= 1){
             seconds.innerHTML = "0"
-            alert("Timeout! Terimakasih sudah mencoba! Password hangus tidak bisa dipakai lagi")
-            clearInterval(timerInterval)
-            document.getElementById("submit").disabled = true
             Array.from(quizQuestions).forEach(question => {
                 question.style.display = "none"
             })
-            //TARO SESUAtu
+            let otherAnswer = (seventhAnswer !== undefined) ? (Boolean(document.getElementById("yanglain").value) == true) ? document.getElementById("yanglain").value:document.querySelector(`label[for=${(seventhAnswer.id)}]`).innerText:''
+            
+            alert("Timeout! Terimakasih sudah mencoba! Password hangus tidak bisa dipakai lagi")
+            clearInterval(timerInterval)
+            document.getElementById("submit").disabled = true
+            await fetch(`${db}/user_response?username=${password}&successful=false&answers=${JSON.stringify([(firstAnswer !== undefined) ? firstAnswer.id:"none", (secondAnswer !== undefined) ? secondAnswer.id:"none", (thirdAnswer !== undefined) ? thirdAnswer.id:"none", (fourthAnswer !== undefined) ? fourthAnswer.id:"none", (fifthAnswer !== undefined) ? fifthAnswer.id:"none", (sixthAnswer !== undefined) ? sixthAnswer.id:"none", otherAnswer])}`, {method: "POST"})
             return;
         }
         let before = parseInt(seconds.innerHTML)
