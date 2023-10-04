@@ -1,7 +1,8 @@
 const quizQuestions = document.querySelectorAll(".quiz-question")
-const submitButton = document.getElementById("credentials-button")
+const credentialsButton = document.getElementById("credentials-button")
 const seconds = document.getElementById("seconds")
 const db = "https://server-side-proxytest.thegenocide.repl.co"
+const submit = document.getElementById("submit")
 
 let timerInterval
 let firstAnswer, secondAnswer, thirdAnswer, fourthAnswer, fifthAnswer, sixthAnswer, seventhAnswer;
@@ -57,18 +58,20 @@ Array.from(quizQuestions).forEach((question, index) => {
                     sixthAnswer = event.target
                 }) 
             } else if ((index + 1) == 7){
-                el.addEventListener("change", event => {
-                    if (seventhAnswer){
-                        seventhAnswer.checked = false
-                    }
-                    seventhAnswer = event.target
-                }) 
+                if (el.id != "yanglain"){
+                    el.addEventListener("change", event => {
+                        if (seventhAnswer){
+                            seventhAnswer.checked = false
+                        }
+                        seventhAnswer = event.target
+                    }) 
+                }
             }
         }
     })
 })
 
-submitButton.addEventListener("click", async event => {
+credentialsButton.addEventListener("click", async event => {
     let name = document.getElementById("name-input").value
     let class_ = document.getElementById("class-input").value
     let password = document.getElementById("password-input").value
@@ -132,6 +135,33 @@ submitButton.addEventListener("click", async event => {
             } 
         })
     })
+    credentialsButton.disabled = true
+})
+
+submit.addEventListener("click", _ => {
+    if (!firstAnswer || !secondAnswer || !thirdAnswer || !fourthAnswer || !fifthAnswer || !sixthAnswer || !(document.getElementById("yanglain").value || seventhAnswer)){
+        alert("Harap isi semuah pertanyaan")
+        return;
+    }
+    let customText = document.getElementById("pesan").value
+    let name = document.getElementById("name-input").value
+    let class_ = document.getElementById("class-input").value
+    let password = document.getElementById("password-input").value
+    let otherAnswer = (Boolean(document.getElementById("yanglain").value) == true) ? document.getElementById("yanglain").value:document.querySelector(`label[for=${seventhAnswer.id}]`).innerText
+
+    Array.from(quizQuestions).forEach(question => {
+        question.style.display = "none"
+    })
+
+    if (!(firstAnswer.id == "komodo" && secondAnswer.id == "cendana" && thirdAnswer.id == "ricebowl-" && fourthAnswer.id == "ikan-bakar" && fifthAnswer.id == "sei" && sixthAnswer.id == "kupang" && Boolean(customText))){
+        alert("Maaf jawaban ada yang salah. Terimakasih untuk mencoba quiz kami!");
+
+    } else {
+        alert(`Halo ${name} dari kelas ${class_} jawaban kamu benar! password ${password} hangus. Terimakasih pesannya: ${customText}.\nJawaban kamu untuk perntayaan terakhir: ${otherAnswer}`)
+    }
+
+    
+
 })
 //TODO: 1. Check jawaban benar, jika benar dapat kupon. Jangan lupa masukan data ke database.
 //      2. Membuat text tidak bisa dicopy paste
