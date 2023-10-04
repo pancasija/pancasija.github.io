@@ -560,6 +560,7 @@ footer {
 }
 
 #timer {
+    margin-top: 0.5em;
     width: 100%;
     display: flex;
     position: fixed;
@@ -608,7 +609,7 @@ input[type=text] {
     justify-content: center;
 }
 
-#credentials-button {
+.submit-button {
     padding: 1.5em;
     border-radius: 10px;
     width: 10em;
@@ -622,4 +623,9 @@ input[type=text] {
     justify-content: center;
     flex-wrap: wrap;
     gap: 2em;
+}
+
+#submit-container {
+    display: flex;
+    justify-content: center;
 }

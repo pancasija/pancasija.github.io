@@ -17,11 +17,9 @@
         <div class="content-in-container">
             <h1 align=center class="signika">Quiz</h1>
             <br>
-            <p class="exodded">Selamat datang didalam quiz buatan kami! Disini kalian harus menjawab sebanyak <strong>7 pertanyaan</strong>. Jika benar semuah akan dikasih kupon atau potongan harga untuk menu kami</p>
+            <p class="exodded">Selamat datang didalam quiz buatan kami! Disini kalian harus menjawab sebanyak <strong>7 pertanyaan</strong>. Jika benar semua akan dikasih kupon atau potongan harga untuk menu kami</p>
         </div>
-        <div class="content-in-container" id="credentials">
-            <h1 align="center" class="signika">Biodata</h1>
-            <br>
+        <div class="content-in-container" id="credentials"> 
             <p class="exodded">Masukan nama, kelas, pesan (apa aja), dan yang paling penting adalah <strong>password</strong> sekali pakai. Saat kalian pencet tombol submit, quiz akan mulai. Kalian dikasi waktu hanya 4 menit. Menggoogle pertanyaan akan <strong>membuat quiz gagal</strong></p>
             <br>
             <div id="credentials-input">
@@ -43,7 +41,7 @@
                 </div>
             </div><br>
             <div id="button-container">
-                <input class="hover-item" id="credentials-button" class="signika" type="button" value="Submit">
+                <input class="hover-item submit-button" id="credentials-button" class="signika" type="button" value="Submit">
             </div>
         </div>
         <div class="quiz-question content-in-container">
@@ -96,8 +94,8 @@
             <br>
             <p class="exodded">NTT merupakan sebuah propinsi di Indonesia yang meliputi bagian timur pulau Nusa Tenggara, memiliki 22 kabupaten/kota, dan berada di Kepulauan Sunda Kecil. Apa ibukota NTT?</p><br>
             <input type="radio" name="maumere" id="maumere"> <label class="exodded" for="maumere">Maumere</label><br>
-            <input type="radio" name="ruteng" id="ruteng"> <label class="exodded" for="ruteng">Ruteng</label><br>
             <input type="radio" name="kupang" id="kupang"> <label class="exodded" for="kupang">Kupang</label><br>
+            <input type="radio" name="ruteng" id="ruteng"> <label class="exodded" for="ruteng">Ruteng</label><br>
             <input type="radio" name="labuan-bajo" id="labuan-bajo"> <label class="exodded" for="labuan-bajo">Labuan Bajo</label><br>
         </div>
         <!-- Kalau pencet yang lain akan dibuat textarea yang dimana bisa mengetik nama semaunya -->
@@ -106,9 +104,14 @@
             <br>
             <p class="exodded" for="question-1">Sekarang ini merupakan pertanyaan paling susah, saya sarankan jangan takut salah! Yang penting dijawab dengan jujur untuk pertanyaan kali ini: Siapakah sepuh di SIJA????</p><br>
             <input type="radio" name="pak-novi" id="pak-novi"> <label class="exodded" for="pak-novi">Pak Novi</label><br>
-            <input type="radio" name="pak-mujiantoro" id="pak-mujiantoro"> <label class="exodded" for="gaharu">Pak Mujiantoro</label><br>
-            <input type="radio" name="semuah" id="semuah"> <label class="exodded" for="semuah">Pega :&rpar;</label><br>
+            <input type="radio" name="bu-citra" id="bu-citra"> <label class="exodded" for="bu-citra">Bu Citra</label><br>
+            <input type="radio" name="semuah" id="semuah"> <label class="exodded" for="semuah">Pak Dika :&rpar;</label><br>
             <input type="text" name="yanglain" placeholder="Yang Lain" id="yanglain">
+        </div>
+        <div class="quiz-question content-in-container">
+            <div id="submit-container">
+                <input type="button" class="exodded submit-button" id="submit" value="Submit">
+            </div>
         </div>
     </form>
 </body>

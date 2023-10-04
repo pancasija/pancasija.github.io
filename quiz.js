@@ -116,6 +116,10 @@ submitButton.addEventListener("click", async event => {
             seconds.innerHTML = "0"
             alert("Timeout! Terimakasih sudah mencoba! Password hangus tidak bisa dipakai lagi")
             clearInterval(timerInterval)
+            document.getElementById("submit").disabled = true
+            Array.from(quizQuestions).forEach(question => {
+                question.style.display = "none"
+            })
             return;
         }
         let before = parseInt(seconds.innerHTML)
@@ -129,3 +133,5 @@ submitButton.addEventListener("click", async event => {
         })
     })
 })
+//TODO: 1. Check jawaban benar, jika benar dapat kupon. Jangan lupa masukan data ke database.
+//      2. Membuat text tidak bisa dicopy paste
