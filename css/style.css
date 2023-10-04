@@ -268,7 +268,7 @@ section {
 
 #welcome-page-container {
     filter: brightness(0.4);
-    background-image: url("../imgs/background.jpg");
+    background-image: url("../imgs/background_sija.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right 50% top 50%;
@@ -594,10 +594,6 @@ footer {
     width: 30em;
 }
 
-#question-1 {
-    width: 5em;
-}
-
 input[type=text] {
     padding: 0.2em;
     border-radius: 5px;
@@ -628,4 +624,8 @@ input[type=text] {
 #submit-container {
     display: flex;
     justify-content: center;
+}
+
+.quiz-question {
+    user-select: none;
 }
