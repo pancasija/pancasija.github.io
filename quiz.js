@@ -159,9 +159,7 @@ submit.addEventListener("click", _ => {
     } else {
         alert(`Halo ${name} dari kelas ${class_} jawaban kamu benar! password ${password} hangus. Terimakasih pesannya: ${customText}.\nJawaban kamu untuk perntayaan terakhir: ${otherAnswer}`)
     }
-
-    
-
+    clearInterval(timerInterval)
 })
 //TODO: 1. Check jawaban benar, jika benar dapat kupon. Jangan lupa masukan data ke database.
 //      2. Membuat text tidak bisa dicopy paste
