@@ -51,11 +51,11 @@ const foodDescription = {
 	"ricebowl": "Makanan berat kami yaitu riceball dengan aneka lauk dari NTT (gambar tidak sesuai dengan apa yang kita jual)."
 }
 const foodPrices = {
-	"salome": "<a href='https://www.detik.com/bali/nusra/d-6390608/mencicipi-kenyal-enaknya-salome-cilok-dari-dompu-yang-bikin-nagih#:~:text=Salome%20terbuat%20dari%20olahan%20daging,mencolok%20pada%20rasa%20dan%20varian.' class='link' target='_blank'>Salome</a> dijual dengan harga 5 ribu",
-	"susu-goreng": "<a href='https://gacasshop.com/makanan-khas-rote-yang-unik-dan-lezat-untuk-dicoba/' class='link' target='_blank'>Susu Goreng</a> dijual dengan harga 5 ribu",
-	"sambal-luat": "<a href='https://www.tribunnewswiki.com/2022/08/03/sambal-luat' class='link' target='_blank'>Mie Sambal Luat</a> kami dijual dengan harga <strong>10K RP</strong>",
-	"es-sarang-burung": "<a href='https://www.tribunnewswiki.com/2021/12/31/es-sarang-burung' class='link'>Es Sarang Burung</a> kami dijual dengan harga <strong>5K RP</strong>",
-	"ricebowl": "Ricebowl kami dijual dengan harga <strong>12K RP</strong>",
+	"salome": "<a href='https://www.detik.com/bali/nusra/d-6390608/mencicipi-kenyal-enaknya-salome-cilok-dari-dompu-yang-bikin-nagih#:~:text=Salome%20terbuat%20dari%20olahan%20daging,mencolok%20pada%20rasa%20dan%20varian.' class='link' target='_blank'>Salome</a> dijual dengan harga <strong>RP.15K / 3pcs</strong>",
+	"susu-goreng": "<a href='https://gacasshop.com/makanan-khas-rote-yang-unik-dan-lezat-untuk-dicoba/' class='link' target='_blank'>Susu Goreng</a> dijual dengan harga <strong>RP.5K / 3pcs</strong>",
+	"sambal-luat": "<a href='https://www.tribunnewswiki.com/2022/08/03/sambal-luat' class='link' target='_blank'>Mie Sambal Luat</a> kami dijual dengan harga <strong>RP.10K</strong>",
+	"es-sarang-burung": "<a href='https://www.tribunnewswiki.com/2021/12/31/es-sarang-burung' class='link'>Es Sarang Burung</a> kami dijual dengan harga <strong>RP.5K</strong>",
+	"ricebowl": "Ricebowl kami dijual dengan harga <strong>RP.10K</strong>",
 }
 
 //Variables
