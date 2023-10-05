@@ -628,4 +628,5 @@ input[type=text] {
 
 .quiz-question {
     user-select: none;
+    -webkit-user-select: none
 }
